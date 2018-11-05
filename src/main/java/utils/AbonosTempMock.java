@@ -387,14 +387,14 @@ public class AbonosTempMock {
            // productPriceES9.setUnits(1);
             productPriceES9.setDiscount(20.0);
 
-            productSICASPriceMapEs.put("cp026",productPriceES);
-            productSICASPriceMapEs.put("cp037",productPriceES2);
+            productSICASPriceMapEs.put("2900",productPriceES);
+            productSICASPriceMapEs.put("6748",productPriceES2);
             productSICASPriceMapEs.put("cp029",productPriceES3);
             productSICASPriceMapEs.put("cp031",productPriceES4);
             productSICASPriceMapEs.put("cp038",productPriceES5);
             productSICASPriceMapEs.put("cp039",productPriceES6);
             productSICASPriceMapEs.put("cp041",productPriceES7);
-            productSICASPriceMapEs.put("cp034",productPriceES8);
+            productSICASPriceMapEs.put("6068",productPriceES8);
             productSICASPriceMapEs.put("cp035",productPriceES9);
 
 

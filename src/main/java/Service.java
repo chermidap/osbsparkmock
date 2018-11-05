@@ -1,10 +1,9 @@
 import com.fasterxml.jackson.core.JsonParseException;
+import com.fasterxml.jackson.databind.DeserializationConfig;
+import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
-import json.ProductSICASPrice;
-import json.Ticket;
-import json.TicketPricesReq;
-import json.TicketPricesResp;
+import json.*;
 import utils.AbonosTempMock;
 
 import java.io.IOException;
@@ -26,14 +25,15 @@ public class Service {
             TicketPricesResp resp = new TicketPricesResp();
             try {
                 ObjectMapper mapper = new ObjectMapper();
+               // mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
                 TicketPricesReq ticketPricesReq = mapper.readValue(request.body(), TicketPricesReq.class);
                 List<String> codAbonosRecommend = new ArrayList<String>();
-                for(Ticket abono: ticketPricesReq.getP_SABALIST_ABONOS()){
+                for(TicketReq abono: ticketPricesReq.getP_SABALIST_ABONOS()){
                    String codsicas =  abono.getProductCode();
                     codAbonosRecommend.add(codsicas);
                 }
 
-                List<Ticket> listaPrecioAbonos= AbonosTempMock.mockListPricesAbonos(codAbonosRecommend , "81", ticketPricesReq.getP_ORG_ID());
+                List<Ticket> listaPrecioAbonos= AbonosTempMock.mockListPricesAbonos(codAbonosRecommend , "097", ticketPricesReq.getP_ORG_ID());
 
                 resp.setPRICECOLLECTION(listaPrecioAbonos);
                 resp.setS_cod_error("");
