@@ -82,7 +82,7 @@ public class Service {
             return "datosCompletos!";
         });
 
-        get("/transfomer", "application/json", (request, response) -> {
+        get("/transformer", "application/json", (request, response) -> {
             return new Ticket("6860","097",100.0);
         }, new JsonTransformer());
 
