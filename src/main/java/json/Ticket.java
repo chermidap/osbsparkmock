@@ -140,4 +140,13 @@ public class Ticket {
     public void setRegistration_fee(Double registration_fee) {
         this.registration_fee = registration_fee;
     }
+
+    public Ticket(String productCode, String parkingCode, Double total_amount) {
+        this.productCode = productCode;
+        this.parkingCode = parkingCode;
+        this.total_amount = total_amount;
+    }
+
+    public Ticket() {
+    }
 }
