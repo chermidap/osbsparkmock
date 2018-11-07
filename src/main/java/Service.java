@@ -1,6 +1,4 @@
 import com.fasterxml.jackson.core.JsonParseException;
-import com.fasterxml.jackson.databind.DeserializationConfig;
-import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import json.*;
@@ -25,7 +23,6 @@ public class Service {
             TicketPricesResp resp = new TicketPricesResp();
             try {
                 ObjectMapper mapper = new ObjectMapper();
-               // mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
                 TicketPricesReq ticketPricesReq = mapper.readValue(request.body(), TicketPricesReq.class);
                 List<String> codAbonosRecommend = new ArrayList<String>();
                 for(TicketReq abono: ticketPricesReq.getP_SABALIST_ABONOS()){
@@ -49,7 +46,33 @@ public class Service {
 
         });
         post("/costeAltaAbono",(request, response) -> {
-            return "costeAltaAbono!";
+            TicketPricesResp resp = new TicketPricesResp();
+            try {
+                ObjectMapper mapper = new ObjectMapper();
+                // mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+                TicketPricesReq ticketPricesReq = mapper.readValue(request.body(), TicketPricesReq.class);
+                List<String> codAbonosRecommend = new ArrayList<String>();
+                for(TicketReq abono: ticketPricesReq.getP_SABALIST_ABONOS()){
+                    String codsicas =  abono.getProductCode();
+                    codAbonosRecommend.add(codsicas);
+                }
+
+                List<Ticket> listaPrecioAbonos= AbonosTempMock.mockCosteAltaAbono();
+
+                resp.setPRICECOLLECTION(listaPrecioAbonos);
+                resp.setS_cod_error("");
+
+
+            } catch (JsonParseException e){
+                // Hey, you did not send a valid request!
+            }
+            //int id = model.createPost(creation.getTitle(), creation.getContent(), creation.getCategories());
+            response.status(200);
+            response.type("application/json");
+            return dataToJson(resp);
+
+
+            //return "costeAltaAbono!";
         });
         post("/preAltaAbono",(request, response) -> {
             return "preAltaAbono!";

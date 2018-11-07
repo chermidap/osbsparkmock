@@ -8,172 +8,172 @@ import java.util.*;
 
 public class AbonosTempMock {
 
-   /* public static  List<ProductSICASPrice>  mockCosteAltaAbono(){
+    public static  List<Ticket>  mockCosteAltaAbono(){
 
 
-        ProductSICASPrice productPriceES = new ProductSICASPrice();
-        ProductSICASPrice productPriceES2 = new ProductSICASPrice();
-        ProductSICASPrice productPriceES3 = new ProductSICASPrice();
-        ProductSICASPrice productPriceES4 = new ProductSICASPrice();
-        ProductSICASPrice productPriceES5 = new ProductSICASPrice();
-        ProductSICASPrice productPriceES6 = new ProductSICASPrice();
-        ProductSICASPrice productPriceES7 = new ProductSICASPrice();
-        ProductSICASPrice productPriceES8 = new ProductSICASPrice();
-        ProductSICASPrice productPriceES9 = new ProductSICASPrice();
+        Ticket productPriceES = new Ticket();
+        Ticket productPriceES2 = new Ticket();
+        Ticket productPriceES3 = new Ticket();
+        Ticket productPriceES4 = new Ticket();
+        Ticket productPriceES5 = new Ticket();
+        Ticket productPriceES6 = new Ticket();
+        Ticket productPriceES7 = new Ticket();
+        Ticket productPriceES8 = new Ticket();
+        Ticket productPriceES9 = new Ticket();
 
-        List<ProductSICASPrice> resultado = new ArrayList<ProductSICASPrice>();
+        List<Ticket> resultado = new ArrayList<Ticket>();
 
 
-            productPriceES2.setProductSICASCode("2900");//cp026
+            productPriceES2.setProductCode("2900");//cp026
             productPriceES2.setParkingCode("097");
-            productPriceES2.setPrice(63.6));
-            productPriceES2.setPriceWithoutDiscount(200.6));
-            productPriceES2.setPriceWithDiscount_sin_iva(52.56));
-            productPriceES2.setTaxesAmount(11.04));
-            productPriceES2.setIva_percent(21));
+            productPriceES2.setPriceWithDiscount(63.6);
+            productPriceES2.setPriceWithoutDiscount(200.6);
+            productPriceES2.setPriceWithDiscount_sin_iva(52.56);
+            //productPriceES2.set(11.04));
+            productPriceES2.setIva_percent(21.0);
             productPriceES2.setDiscount(20.0);
 
-            productPriceES2.setEmission_amount( 170));
-            productPriceES2.setEndate( new Date());
-            productPriceES2.setRegistration_fee( 10));
-            productPriceES2.setTotal_amount(63.6+170+10));
-            productPriceES2.setSub_total_amount(170+10));
+            productPriceES2.setEmissionCost( 170.0);
+            productPriceES2.setEnd_date( new Date());
+            productPriceES2.setRegistration_fee( 10.0);
+            productPriceES2.setTotal_amount(63.6+170+10);
+           // productPriceES2.setSub_total_amount(170+10));
 
 
-            productPriceES.setProductSICASCode("6748");//cp037
+            productPriceES.setProductCode("6748");//cp037
             productPriceES.setParkingCode("097");
-            productPriceES.setPrice(50.6));
-            productPriceES.setPriceWithoutDiscount(200.6));
-            productPriceES.setPriceWithDiscount_sin_iva(52.56));
-            productPriceES.setTaxesAmount(11.04));
-            productPriceES.setIva_percent(21));
-            productPriceES.setUnits(1);
+            productPriceES.setPriceWithDiscount(50.6);
+            productPriceES.setPriceWithoutDiscount(200.6);
+            productPriceES.setPriceWithDiscount_sin_iva(52.56);
+            //productPriceES.setTaxesAmount(11.04));
+            productPriceES.setIva_percent(21.0);
+          //  productPriceES.setUnits(1);
             productPriceES.setDiscount(20.0);
 
-            productPriceES.setEmission_amount( 160));//gastos de emision de tarjeta
-            productPriceES.setEndate(new Date());
-            productPriceES.setRegistration_fee( 10));//cuota de alta
-            productPriceES.setTotal_amount(160+10+50.6));
-            productPriceES.setSub_total_amount(170+10));
+            productPriceES.setEmissionCost( 160.0);//gastos de emision de tarjeta
+            productPriceES.setEnd_date(new Date());
+            productPriceES.setRegistration_fee( 10.0);//cuota de alta
+            productPriceES.setTotal_amount(160+10+50.6);
+           // productPriceES.setSub_total_amount(170+10));
 
 
-            productPriceES3.setProductSICASCode("2903");//cp029
+            productPriceES3.setProductCode("2903");//cp029
             productPriceES3.setParkingCode("097");
-            productPriceES3.setPrice(85.6));
-            productPriceES3.setPriceWithoutDiscount(200.6));
-            productPriceES3.setPriceWithDiscount_sin_iva(52.56));
-            productPriceES3.setTaxesAmount(11.04));
-            productPriceES3.setIva_percent(21));
-            productPriceES3.setUnits(1);
+            productPriceES3.setPriceWithDiscount(85.6);
+            productPriceES3.setPriceWithoutDiscount(200.6);
+            productPriceES3.setPriceWithDiscount_sin_iva(52.56);
+           // productPriceES3.setTaxesAmount(11.04));
+            productPriceES3.setIva_percent(21.0);
+           // productPriceES3.setUnits(1);
             productPriceES3.setDiscount(20.0);
 
-            productPriceES3.setEmission_amount( 180));
-            productPriceES3.setEndate( new Date());
-            productPriceES3.setRegistration_fee( 20));
-            productPriceES3.setTotal_amount(180+20+85.6));
-            productPriceES3.setSub_total_amount(180+20));
+            productPriceES3.setEmissionCost( 180.0);
+            productPriceES3.setEnd_date( new Date());
+            productPriceES3.setRegistration_fee( 20.0);
+            productPriceES3.setTotal_amount(180+20+85.6);
+           // productPriceES3.setSub_total_amount(180+20));
 
-            productPriceES4.setProductSICASCode("2904");//cp031
+            productPriceES4.setProductCode("2904");//cp031
             productPriceES4.setParkingCode("097");
-            productPriceES4.setPrice(45.6));
-            productPriceES4.setPriceWithoutDiscount(200.6));
-            productPriceES4.setPriceWithDiscount_sin_iva(52.56));
-            productPriceES4.setTaxesAmount(11.04));
-            productPriceES4.setIva_percent(21));
-            productPriceES4.setUnits(1);
+            productPriceES4.setPriceWithDiscount(45.6);
+            productPriceES4.setPriceWithoutDiscount(200.6);
+            productPriceES4.setPriceWithDiscount_sin_iva(52.56);
+          //  productPriceES4.setTaxesAmount(11.04));
+            productPriceES4.setIva_percent(21.0);
+          //  productPriceES4.setUnits(1);
             productPriceES4.setDiscount(20.0);
 
-            productPriceES4.setEmission_amount( 180));
-            productPriceES4.setEndate( new Date());
-            productPriceES4.setRegistration_fee( 20));
-            productPriceES4.setTotal_amount(180+20+45.6));
-            productPriceES4.setSub_total_amount(170+10));
+            productPriceES4.setEmissionCost( 180.0);
+            productPriceES4.setEnd_date( new Date());
+            productPriceES4.setRegistration_fee( 20.0);
+            productPriceES4.setTotal_amount(180+20+45.6);
+           // productPriceES4.setSub_total_amount(170+10));
 
 
-            productPriceES5.setProductSICASCode("2902");//cp038
+            productPriceES5.setProductCode("2902");//cp038
             productPriceES5.setParkingCode("097");
-            productPriceES5.setPrice(34.6));
-            productPriceES5.setPriceWithoutDiscount(200.6));
-            productPriceES5.setPriceWithDiscount_sin_iva(52.56));
-            productPriceES5.setTaxesAmount(11.04));
-            productPriceES5.setIva_percent(21));
-            productPriceES5.setUnits(1);
+            productPriceES5.setPriceWithDiscount(34.6);
+            productPriceES5.setPriceWithoutDiscount(200.6);
+            productPriceES5.setPriceWithDiscount_sin_iva(52.56);
+         //   productPriceES5.setTaxesAmount(11.04));
+            productPriceES5.setIva_percent(21.0);
+         //   productPriceES5.setUnits(1);
             productPriceES5.setDiscount(20.0);
 
-            productPriceES5.setEmission_amount( 180));
-            productPriceES5.setEndate( new Date());
-            productPriceES5.setRegistration_fee( 20));
-            productPriceES5.setTotal_amount(180+20+34.6));
-            productPriceES5.setSub_total_amount(170+10));
+            productPriceES5.setEmissionCost( 180.0);
+            productPriceES5.setEnd_date( new Date());
+            productPriceES5.setRegistration_fee( 20.0);
+            productPriceES5.setTotal_amount(180+20+34.6);
+          //  productPriceES5.setSub_total_amount(170+10));
 
 
-            productPriceES6.setProductSICASCode("2905");//cp039(2905)
+            productPriceES6.setProductCode("2905");//cp039(2905)
             productPriceES6.setParkingCode("097");
-            productPriceES6.setPrice(100));
-            productPriceES6.setPriceWithoutDiscount(200.6));
-            productPriceES6.setPriceWithDiscount_sin_iva(52.56));
-            productPriceES6.setTaxesAmount(11.04));
-            productPriceES6.setIva_percent(21));
-            productPriceES6.setUnits(1);
+            productPriceES6.setPriceWithDiscount(100.0);
+            productPriceES6.setPriceWithoutDiscount(200.6);
+            productPriceES6.setPriceWithDiscount_sin_iva(52.56);
+           // productPriceES6.setTaxesAmount(11.04));
+            productPriceES6.setIva_percent(21.0);
+          //  productPriceES6.setUnits(1);
             productPriceES6.setDiscount(20.0);
 
-            productPriceES6.setEmission_amount( 180));
-            productPriceES6.setEndate( new Date());
-            productPriceES6.setRegistration_fee( 20));
-            productPriceES6.setTotal_amount(180+20+100));
-            productPriceES6.setSub_total_amount(170+10));
+            productPriceES6.setEmissionCost( 180.0);
+            productPriceES6.setEnd_date( new Date());
+            productPriceES6.setRegistration_fee( 20.0);
+            productPriceES6.setTotal_amount(180+20+100.0);
+          //  productPriceES6.setSub_total_amount(170+10));
 
 
 
-            productPriceES7.setProductSICASCode("4763");//cp041(4763)
+            productPriceES7.setProductCode("4763");//cp041(4763)
             productPriceES7.setParkingCode("097");
-            productPriceES7.setPrice(115));
-            productPriceES7.setPriceWithoutDiscount(200.6));
-            productPriceES7.setPriceWithDiscount_sin_iva(52.56));
-            productPriceES7.setTaxesAmount(11.04));
-            productPriceES7.setIva_percent(21));
-            productPriceES7.setUnits(1);
+            productPriceES7.setPriceWithDiscount(115.0);
+            productPriceES7.setPriceWithoutDiscount(200.6);
+            productPriceES7.setPriceWithDiscount_sin_iva(52.56);
+          //  productPriceES7.setTaxesAmount(11.04));
+            productPriceES7.setIva_percent(21.0);
+          //  productPriceES7.setUnits(1);
             productPriceES7.setDiscount(20.0);
 
-            productPriceES7.setEmission_amount( 180));
-            productPriceES7.setEndate( new Date());
-            productPriceES7.setRegistration_fee( 20));
-            productPriceES7.setTotal_amount(180+20));
-            productPriceES7.setSub_total_amount(170+10));
+            productPriceES7.setEmissionCost( 180.0);
+            productPriceES7.setEnd_date( new Date());
+            productPriceES7.setRegistration_fee( 20.0);
+            productPriceES7.setTotal_amount(180+20.0);
+        //  productPriceES7.setSub_total_amount(170+10));
 
 
-            productPriceES8.setProductSICASCode("6068");//cp034(6068)
+            productPriceES8.setProductCode("6068");//cp034(6068)
             productPriceES8.setParkingCode("097");
-            productPriceES8.setPrice(90.6));
-            productPriceES8.setPriceWithoutDiscount(200.6));
-            productPriceES8.setPriceWithDiscount_sin_iva(52.56));
-            productPriceES8.setTaxesAmount(11.04));
-            productPriceES8.setIva_percent(21));
-            productPriceES8.setUnits(1);
+            productPriceES8.setPriceWithDiscount(90.6);
+            productPriceES8.setPriceWithoutDiscount(200.6);
+            productPriceES8.setPriceWithDiscount_sin_iva(52.56);
+          //  productPriceES8.setTaxesAmount(11.04));
+            productPriceES8.setIva_percent(21.0);
+          //  productPriceES8.setUnits(1);
             productPriceES8.setDiscount(20.0);
 
-            productPriceES8.setEmission_amount( 180));
-            productPriceES8.setEndate( new Date());
-            productPriceES8.setRegistration_fee( 20));
-            productPriceES8.setTotal_amount(180+20));
-            productPriceES8.setSub_total_amount(170+10+90.6));
+            productPriceES8.setEmissionCost( 180.0);
+            productPriceES8.setEnd_date( new Date());
+            productPriceES8.setRegistration_fee( 20.0);
+            productPriceES8.setTotal_amount(180+20.0);
+          // productPriceES8.setSub_total_amount(170+10+90.6));
 
 
-            productPriceES9.setProductSICASCode("2906");//cp035(2906)
+            productPriceES9.setProductCode("2906");//cp035(2906)
             productPriceES9.setParkingCode("097");
-            productPriceES9.setPrice(88.6));
-            productPriceES9.setPriceWithoutDiscount(200.6));
-            productPriceES9.setPriceWithDiscount_sin_iva(52.56));
-            productPriceES9.setTaxesAmount(11.04));
-            productPriceES9.setIva_percent(21));
-            productPriceES9.setUnits(1);
+            productPriceES9.setPriceWithDiscount(88.6);
+            productPriceES9.setPriceWithoutDiscount(200.6);
+            productPriceES9.setPriceWithDiscount_sin_iva(52.56);
+         //   productPriceES9.setTaxesAmount(11.04));
+            productPriceES9.setIva_percent(21.0);
+          //  productPriceES9.setUnits(1);
             productPriceES9.setDiscount(20.0);
 
-            productPriceES9.setEmission_amount( 180));
-            productPriceES9.setEndate( new Date());
-            productPriceES9.setRegistration_fee( 20));
-            productPriceES9.setTotal_amount(180+20+88.6));
-            productPriceES9.setSub_total_amount(170+10));
+            productPriceES9.setEmissionCost( 180.0);
+            productPriceES9.setEnd_date( new Date());
+            productPriceES9.setRegistration_fee( 20.0);
+            productPriceES9.setTotal_amount(180+20+88.6);
+          //  productPriceES9.setSub_total_amount(170+10));
 
 
             resultado.add(productPriceES);
@@ -188,7 +188,7 @@ public class AbonosTempMock {
 
         return resultado;
     }
-*/
+
  /*   public static  List<ProductSICASPrice>  mockPriceAbono(String codsicas){
         Map<String,ProductSICASPrice> productSICASPriceMapEs = new HashMap<String, ProductSICASPrice>();
         List<ProductSICASPrice> resultado = new ArrayList<ProductSICASPrice>();
@@ -219,7 +219,7 @@ public class AbonosTempMock {
         productPriceES8.setDiscount(20.0);
 
         productPriceES8.setEmission_amount( 180));
-        productPriceES8.setEndate( new Date());
+        productPriceES8.setEnd_date( new Date());
         productPriceES8.setRegistration_fee( 20));
         productPriceES8.setTotal_amount(180+20));
         productPriceES8.setSub_total_amount(170+10+90.6));
