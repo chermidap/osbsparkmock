@@ -1,7 +1,7 @@
 package json;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonView;
+
 
 import java.util.Date;
 import java.util.List;
@@ -13,6 +13,10 @@ public class TicketPricesReq {
     private Date P_DAT_FECHAINICIO;
     private String P_COD_IDIOMA;
     private String P_ORG_ID;
+
+    private String p_dat_hora_inicio;
+    private String p_dat_hora_fin;
+    private String p_dias_semana;
 
     @JsonProperty(value = "p_cod_usu")
     public String getCoduser() {
@@ -55,5 +59,46 @@ public class TicketPricesReq {
 
     public void setP_ORG_ID(String p_ORG_ID) {
         P_ORG_ID = p_ORG_ID;
+    }
+
+    @JsonProperty(value = "p_dat_hora_inicio")
+    public String getP_dat_hora_inicio() {
+        return p_dat_hora_inicio;
+    }
+
+    public void setP_dat_hora_inicio(String p_dat_hora_inicio) {
+        this.p_dat_hora_inicio = p_dat_hora_inicio;
+    }
+
+    @JsonProperty(value = "p_dat_hora_fin")
+    public String getP_dat_hora_fin() {
+        return p_dat_hora_fin;
+    }
+
+    public void setP_dat_hora_fin(String p_dat_hora_fin) {
+        this.p_dat_hora_fin = p_dat_hora_fin;
+    }
+
+    @JsonProperty(value = "p_dias_semana")
+    public String getP_dias_semana() {
+        return p_dias_semana;
+    }
+
+    public void setP_dias_semana(String p_dias_semana) {
+        this.p_dias_semana = p_dias_semana;
+    }
+
+    @Override
+    public String toString() {
+        return "TicketPricesReq{" +
+                "coduser='" + coduser + '\'' +
+                ", P_SABALIST_ABONOS=" + P_SABALIST_ABONOS +
+                ", P_DAT_FECHAINICIO=" + P_DAT_FECHAINICIO +
+                ", P_COD_IDIOMA='" + P_COD_IDIOMA + '\'' +
+                ", P_ORG_ID='" + P_ORG_ID + '\'' +
+                ", p_dat_hora_inicio='" + p_dat_hora_inicio + '\'' +
+                ", p_dat_hora_fin='" + p_dat_hora_fin + '\'' +
+                ", p_dias_semana='" + p_dias_semana + '\'' +
+                '}';
     }
 }
