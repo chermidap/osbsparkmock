@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static spark.Spark.get;
+import static spark.Spark.port;
 import static spark.Spark.post;
 
 
@@ -16,10 +17,7 @@ public class Service {
 
     public static void main( String[] args) {
         ParserToJson parser = new ParserToJson();
-        get("/posts", (req, res) -> {
-            return "Hello Sparkingly World!";
-        });
-
+        port(4568);
         post("/getPrecioAbono",(request, response) -> {
             TicketPricesResp resp = new TicketPricesResp();
             try {

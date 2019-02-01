@@ -33,7 +33,7 @@ public class AbonosTempMock {
             productPriceES2.setIva_percent(21.0);
             productPriceES2.setDiscount(20.0);
 
-            productPriceES2.setEmissionCost( 170.0);
+            productPriceES2.setManageAmount( 170.0);
             productPriceES2.setEnd_date( new Date());
             productPriceES2.setRegistration_fee( 10.0);
             productPriceES2.setTotal_amount(63.6+170+10);
@@ -50,7 +50,7 @@ public class AbonosTempMock {
           //  productPriceES.setUnits(1);
             productPriceES.setDiscount(20.0);
 
-            productPriceES.setEmissionCost( 160.0);//gastos de emision de tarjeta
+            productPriceES.setManageAmount( 160.0);//gastos de emision de tarjeta
             productPriceES.setEnd_date(new Date());
             productPriceES.setRegistration_fee( 10.0);//cuota de alta
             productPriceES.setTotal_amount(160+10+50.6);
@@ -67,7 +67,7 @@ public class AbonosTempMock {
            // productPriceES3.setUnits(1);
             productPriceES3.setDiscount(20.0);
 
-            productPriceES3.setEmissionCost( 180.0);
+            productPriceES3.setManageAmount( 180.0);
             productPriceES3.setEnd_date( new Date());
             productPriceES3.setRegistration_fee( 20.0);
             productPriceES3.setTotal_amount(180+20+85.6);
@@ -83,7 +83,7 @@ public class AbonosTempMock {
           //  productPriceES4.setUnits(1);
             productPriceES4.setDiscount(20.0);
 
-            productPriceES4.setEmissionCost( 180.0);
+            productPriceES4.setManageAmount( 180.0);
             productPriceES4.setEnd_date( new Date());
             productPriceES4.setRegistration_fee( 20.0);
             productPriceES4.setTotal_amount(180+20+45.6);
@@ -100,7 +100,7 @@ public class AbonosTempMock {
          //   productPriceES5.setUnits(1);
             productPriceES5.setDiscount(20.0);
 
-            productPriceES5.setEmissionCost( 180.0);
+            productPriceES5.setManageAmount( 180.0);
             productPriceES5.setEnd_date( new Date());
             productPriceES5.setRegistration_fee( 20.0);
             productPriceES5.setTotal_amount(180+20+34.6);
@@ -117,7 +117,7 @@ public class AbonosTempMock {
           //  productPriceES6.setUnits(1);
             productPriceES6.setDiscount(20.0);
 
-            productPriceES6.setEmissionCost( 180.0);
+            productPriceES6.setManageAmount( 180.0);
             productPriceES6.setEnd_date( new Date());
             productPriceES6.setRegistration_fee( 20.0);
             productPriceES6.setTotal_amount(180+20+100.0);
@@ -135,7 +135,7 @@ public class AbonosTempMock {
           //  productPriceES7.setUnits(1);
             productPriceES7.setDiscount(20.0);
 
-            productPriceES7.setEmissionCost( 180.0);
+            productPriceES7.setManageAmount( 180.0);
             productPriceES7.setEnd_date( new Date());
             productPriceES7.setRegistration_fee( 20.0);
             productPriceES7.setTotal_amount(180+20.0);
@@ -152,7 +152,7 @@ public class AbonosTempMock {
           //  productPriceES8.setUnits(1);
             productPriceES8.setDiscount(20.0);
 
-            productPriceES8.setEmissionCost( 180.0);
+            productPriceES8.setManageAmount( 180.0);
             productPriceES8.setEnd_date( new Date());
             productPriceES8.setRegistration_fee( 20.0);
             productPriceES8.setTotal_amount(180+20.0);
@@ -169,7 +169,7 @@ public class AbonosTempMock {
           //  productPriceES9.setUnits(1);
             productPriceES9.setDiscount(20.0);
 
-            productPriceES9.setEmissionCost( 180.0);
+            productPriceES9.setManageAmount( 180.0);
             productPriceES9.setEnd_date( new Date());
             productPriceES9.setRegistration_fee( 20.0);
             productPriceES9.setTotal_amount(180+20+88.6);

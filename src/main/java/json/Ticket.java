@@ -19,7 +19,7 @@ public class Ticket {
     private Double amount_iva_price_withow_dto; // s_importe_iva_precio_sin_dto
     private Double amount_iva_price_with_dto;//“s_importe_iva_precio_con_dto”:”10”,
 
-    private Double emissionCost; // "s_gasto_emision":"number",
+    private Double manageAmount; // "s_gasto_gestion":"number",
     private Double iva_percent; // "s_porcentaje_iva":"number",
 
     private Date end_date; //s_fecha_fin
@@ -98,14 +98,16 @@ public class Ticket {
     public void setAmount_iva_price_with_dto(Double amount_iva_price_with_dto) {
         this.amount_iva_price_with_dto = amount_iva_price_with_dto;
     }
-    @JsonProperty(value = "s_gasto_emision")
-    public Double getEmissionCost() {
-        return emissionCost;
+    @JsonProperty(value = "s_gasto_gestion")
+    public Double getManageAmount() {
+        return manageAmount;
     }
 
-    public void setEmissionCost(Double emissionCost) {
-        this.emissionCost = emissionCost;
+    public void setManageAmount(Double manageAmount) {
+        this.manageAmount = manageAmount;
     }
+
+
     @JsonProperty(value = "s_porcentaje_iva")
     public Double getIva_percent() {
         return iva_percent;
