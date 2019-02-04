@@ -112,6 +112,40 @@ public class Service {
             return "getConsultaImpagosCliente!";
         });
 
+        post("/SetDetailsUsuarioRS",(request, response) -> {
+            UserResponse userResponse  =null;
+            try {
+                ObjectMapper mapper = new ObjectMapper();
+                // mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+                UserRequest userRequest = mapper.readValue(request.body(), UserRequest.class);
+                userResponse = AbonosTempMock.mockSetUserDetail(userRequest);
+
+            } catch (JsonParseException e){
+                // Hey, you did not send a valid request!
+            }
+            response.status(200);
+            response.type("application/json");
+            return parser.dataToJson(userResponse);
+        });
+
+        post("/GetDetailsUsuarioRS",(request, response) -> {
+
+            UserResponse userResponse  =null;
+            try {
+                ObjectMapper mapper = new ObjectMapper();
+                // mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+                UserRequest userRequest = mapper.readValue(request.body(), UserRequest.class);
+                userResponse = AbonosTempMock.mockGetUserDetatil(userRequest);
+
+            } catch (JsonParseException e){
+                // Hey, you did not send a valid request!
+            }
+            response.status(200);
+            response.type("application/json");
+            return parser.dataToJson(userResponse);
+
+        });
+
 
 
         get("/transformer", "application/json", (request, response) -> {

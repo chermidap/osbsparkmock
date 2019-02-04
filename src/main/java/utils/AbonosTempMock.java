@@ -2,10 +2,51 @@ package utils;
 
 import json.*;
 
-import java.math.BigDecimal;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 public class AbonosTempMock {
+
+    private static final Map<String, UserResponse> usuarios = initMap();
+
+    private static Map<String, UserResponse> initMap() {
+        Map<String, UserResponse> map = new HashMap<>();
+        UserResponse userResponseVerified = new UserResponse();
+        UserResponse userResponseNoVerified = new UserResponse();
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/mm/yyyy");
+        try {
+            Date deteOfBirth =  simpleDateFormat.parse("04/02/1980");
+            userResponseVerified.setBirthDate(deteOfBirth);
+            userResponseNoVerified.setBirthDate(deteOfBirth);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        userResponseVerified.setEmail("usuario.verified@intelygenz.com");
+        userResponseVerified.setId("4444");
+        userResponseVerified.setLanguage("CAST");
+        userResponseVerified.setName("Usuario");
+        userResponseVerified.setNewsletter(true);
+        userResponseVerified.setPassword("");
+        userResponseVerified.setSurname("Verified");
+        userResponseVerified.setS_cod_cli("180444");
+
+        userResponseNoVerified.setEmail("usuario.noverified@intelygenz.com");
+        userResponseNoVerified.setId("4445");
+        userResponseNoVerified.setLanguage("CAST");
+        userResponseNoVerified.setName("Usuario");
+        userResponseNoVerified.setNewsletter(true);
+        userResponseNoVerified.setPassword("");
+        userResponseNoVerified.setSurname("NoVerified");
+        userResponseNoVerified.setS_cod_cli(null);
+
+        map.put(userResponseVerified.getId(),userResponseVerified);
+        map.put(userResponseNoVerified.getId(),userResponseNoVerified);
+
+        return Collections.unmodifiableMap(map);
+    }
+
 
     public static  List<Ticket>  mockCosteAltaAbono(){
 
@@ -656,5 +697,14 @@ public class AbonosTempMock {
         return purchaseTicketsResponse;
     }
 
-
+    public static UserResponse mockSetUserDetail(UserRequest request){
+        return usuarios.get(request.getP_COD_USU());
     }
+
+
+    public static UserResponse mockGetUserDetatil(UserRequest request){
+
+        return usuarios.get(request.getP_COD_USU());
+    }
+
+}
