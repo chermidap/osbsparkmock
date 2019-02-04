@@ -87,7 +87,25 @@ public class Service {
 
         });
         post("/datosCompletos",(request, response) -> {
-            return "datosCompletos!";
+
+            try {
+                ObjectMapper mapper = new ObjectMapper();
+                // mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+                PurchaseDataTicketRequest purchaseTicketsRequest = mapper.readValue(request.body(), PurchaseDataTicketRequest.class);
+                purchaseTicketsRequest.getP_iban();
+                purchaseTicketsRequest.getP_cod_aparca();
+                purchaseTicketsRequest.getP_loc_venta();
+                purchaseTicketsRequest.getP_marca();
+                purchaseTicketsRequest.getP_matricula();
+                purchaseTicketsRequest.getP_modelo();
+
+            } catch (JsonParseException e){
+                // Hey, you did not send a valid request!
+            }
+            response.status(200);
+            response.type("application/json");
+
+            return "ok";
         });
 
         post("/getConsultaImpagosCliente",(request, response) -> {
