@@ -38,7 +38,6 @@ public class Service {
             } catch (JsonParseException e){
                 // Hey, you did not send a valid request!
             }
-            //int id = model.createPost(creation.getTitle(), creation.getContent(), creation.getCategories());
             response.status(200);
             response.type("application/json");
             return parser.dataToJson(resp);
@@ -65,13 +64,10 @@ public class Service {
             } catch (JsonParseException e){
                 // Hey, you did not send a valid request!
             }
-            //int id = model.createPost(creation.getTitle(), creation.getContent(), creation.getCategories());
             response.status(200);
             response.type("application/json");
             return parser.dataToJson(resp);
 
-
-            //return "costeAltaAbono!";
         });
         post("/preAltaAbono",(request, response) -> {
             return "preAltaAbono!";
@@ -79,6 +75,12 @@ public class Service {
         post("/datosCompletos",(request, response) -> {
             return "datosCompletos!";
         });
+
+        post("/getConsultaImpagosCliente",(request, response) -> {
+            return "getConsultaImpagosCliente!";
+        });
+
+
 
         get("/transformer", "application/json", (request, response) -> {
             return new Ticket("6860","097",100.0);
