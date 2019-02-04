@@ -1,7 +1,6 @@
 package utils;
 
-import json.ProductSICASPrice;
-import json.Ticket;
+import json.*;
 
 import java.math.BigDecimal;
 import java.util.*;
@@ -626,9 +625,6 @@ public class AbonosTempMock {
         }
 
 
-
-
-
         for(String codprod:codAbonosRecommend){
             if(countrycode.equals("81")){
                 if( productSICASPriceMapEs.get(codprod)!=null){
@@ -641,4 +637,24 @@ public class AbonosTempMock {
 
         return mockListAbonos;
     }
-}
+
+    public static PurchaseTicketsResponse mockPreAltaAbono(PurchaseTicketsRequest request){
+
+        List<PurchasePrePayTicketRequest> lisadoProd = request.getP_sabalist_loc_producto();
+        for(PurchasePrePayTicketRequest prePayTicketRequest:lisadoProd){
+            prePayTicketRequest.getP_cod_aparca();
+            prePayTicketRequest.getP_cod_producto();
+            prePayTicketRequest.getP_importeiva();
+            prePayTicketRequest.getP_prop_estadolocalizador();
+        }
+
+        PurchaseTicketsResponse purchaseTicketsResponse  =new PurchaseTicketsResponse();
+        purchaseTicketsResponse.setS_cod_error(null);
+        purchaseTicketsResponse.setS_cod_localizador("");//como se crea el localizador???
+        purchaseTicketsResponse.setS_cod_qr("");// como se crea el qr??'
+
+        return purchaseTicketsResponse;
+    }
+
+
+    }

@@ -70,7 +70,24 @@ public class Service {
 
         });
         post("/preAltaAbono",(request, response) -> {
-            return "preAltaAbono!";
+            PurchaseTicketsResponse purchaseTicketsResponse  =null;
+            try {
+                ObjectMapper mapper = new ObjectMapper();
+                // mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+                PurchaseTicketsRequest purchaseTicketsRequest = mapper.readValue(request.body(), PurchaseTicketsRequest.class);
+
+
+                purchaseTicketsResponse= AbonosTempMock.mockPreAltaAbono();
+
+
+
+            } catch (JsonParseException e){
+                // Hey, you did not send a valid request!
+            }
+            response.status(200);
+            response.type("application/json");
+            return parser.dataToJson(purchaseTicketsResponse);
+
         });
         post("/datosCompletos",(request, response) -> {
             return "datosCompletos!";
