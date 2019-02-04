@@ -75,10 +75,7 @@ public class Service {
                 ObjectMapper mapper = new ObjectMapper();
                 // mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
                 PurchaseTicketsRequest purchaseTicketsRequest = mapper.readValue(request.body(), PurchaseTicketsRequest.class);
-
-
-                purchaseTicketsResponse= AbonosTempMock.mockPreAltaAbono();
-
+                purchaseTicketsResponse= AbonosTempMock.mockPreAltaAbono(purchaseTicketsRequest);
 
 
             } catch (JsonParseException e){
