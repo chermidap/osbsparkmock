@@ -15,20 +15,14 @@ public class AbonosTempMock {
         Map<String, UserResponse> map = new HashMap<>();
         UserResponse userResponseVerified = new UserResponse();
         UserResponse userResponseNoVerified = new UserResponse();
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/mm/yyyy");
-        try {
-            Date deteOfBirth =  simpleDateFormat.parse("04/02/1980");
-            userResponseVerified.setBirthDate(deteOfBirth);
-            userResponseNoVerified.setBirthDate(deteOfBirth);
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
+
+        userResponseVerified.setBirthDate("04/02/1980");
         userResponseVerified.setEmail("usuario.verified@intelygenz.com");
         userResponseVerified.setId("4444");
         userResponseVerified.setLanguage("CAST");
         userResponseVerified.setName("Usuario");
         userResponseVerified.setNewsletter(true);
-        userResponseVerified.setPassword("");
+        userResponseVerified.setPassword("12345678");
         userResponseVerified.setSurname("Verified");
         userResponseVerified.setS_cod_cli("180444");
 
@@ -37,12 +31,13 @@ public class AbonosTempMock {
         userResponseNoVerified.setLanguage("CAST");
         userResponseNoVerified.setName("Usuario");
         userResponseNoVerified.setNewsletter(true);
-        userResponseNoVerified.setPassword("");
+        userResponseNoVerified.setPassword("12345678");
         userResponseNoVerified.setSurname("NoVerified");
+        userResponseNoVerified.setBirthDate("04/02/1979");
         userResponseNoVerified.setS_cod_cli(null);
 
-        map.put(userResponseVerified.getId(),userResponseVerified);
-        map.put(userResponseNoVerified.getId(),userResponseNoVerified);
+        map.put(userResponseVerified.getEmail(),userResponseVerified);
+        map.put(userResponseNoVerified.getEmail(),userResponseNoVerified);
 
         return Collections.unmodifiableMap(map);
     }
@@ -698,13 +693,13 @@ public class AbonosTempMock {
     }
 
     public static UserResponse mockSetUserDetail(UserRequest request){
-        return usuarios.get(request.getP_COD_USU());
+        return usuarios.get(request.getP_TXT_EMAIL());
     }
 
 
     public static UserResponse mockGetUserDetatil(UserRequest request){
 
-        return usuarios.get(request.getP_COD_USU());
+        return usuarios.get(request.getP_TXT_MAIL());
     }
 
 }

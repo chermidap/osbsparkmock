@@ -12,7 +12,7 @@ public class UserResponse implements Serializable {
     private String name;
     private String surname;
     private String email;
-    private Date birthDate;
+    private String birthDate;
     private boolean newsletter;
     private String password; //TODO - Pasarlo a char[] por seguridad
     private String language = "CAST"; //Por defecto
@@ -53,15 +53,16 @@ public class UserResponse implements Serializable {
     public void setEmail(String email) {
         this.email = email;
     }
-
     @JsonProperty(value = "S_DAT_FECHANACIMIENTO")
-    public Date getBirthDate() {
-        return birthDate!=null?(Date)birthDate.clone():null;
+    public String getBirthDate() {
+        return birthDate;
     }
 
-    public void setBirthDate(Date birthDate) {
+    public void setBirthDate(String birthDate) {
         this.birthDate = birthDate;
     }
+
+
 
     @JsonProperty(value = "P_BOL_NEWSLETTER")
     public boolean isNewsletter() {
