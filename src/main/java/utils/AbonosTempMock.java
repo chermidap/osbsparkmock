@@ -702,4 +702,39 @@ public class AbonosTempMock {
         return usuarios.get(request.getP_TXT_MAIL());
     }
 
+    public static AddCustomerResponse mockAddCustomer(AddCustomerRequest request){
+
+        AddCustomerResponse addCustomerResponse = new AddCustomerResponse();
+
+        addCustomerResponse.setS_cod_cli("180444");
+        addCustomerResponse.setS_cod_error(null);
+
+        return addCustomerResponse;
+
+    }
+    public static GetCustomerResponse mockGetCustomer(GetCustomerRequest request){
+        CustomerS customerS = new CustomerS();
+        GetCustomerResponse getCustomerResponse = new GetCustomerResponse();
+
+        customerS.setS_apellido_1("Verificado");
+        customerS.setS_apellido_2("Verificado");
+        customerS.setS_cod_cli("180444");
+        customerS.setS_cod_postal("28080");
+        customerS.setS_direccion_fiscal("Gran Vía 30");
+        customerS.setS_nacionalidad("España");
+        customerS.setS_partita_iva(null);
+        customerS.setS_pec(null);
+        customerS.setS_poblacion("Madrid");
+        customerS.setS_telefono(910000000);
+        customerS.setS_nombre("Usuario");
+        customerS.setS_txt_nombreCompleto("Usuario Verificado Verificado");
+        customerS.setS_txt_nif("00000001T");
+        getCustomerResponse.setS_cod_error(null);
+        getCustomerResponse.setS_datos_cliente(customerS);
+
+
+        return getCustomerResponse;
+
+    }
+
 }
