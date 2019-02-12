@@ -10,7 +10,7 @@ public class TicketPricesReq {
 
     private String coduser;
     private List<TicketReq> P_SABALIST_ABONOS;
-    private Date P_DAT_FECHAINICIO;
+    private String P_DAT_FECHAINICIO;
     private String P_COD_IDIOMA;
     private String P_ORG_ID;
 
@@ -37,11 +37,11 @@ public class TicketPricesReq {
     }
 
     @JsonProperty(value = "p_dat_fecha_inicio")
-    public Date getP_DAT_FECHAINICIO() {
+    public String getP_DAT_FECHAINICIO() {
         return P_DAT_FECHAINICIO;
     }
 
-    public void setP_DAT_FECHAINICIO(Date p_DAT_FECHAINICIO) {
+    public void setP_DAT_FECHAINICIO(String p_DAT_FECHAINICIO) {
         P_DAT_FECHAINICIO = p_DAT_FECHAINICIO;
     }
     @JsonProperty(value = "p_cod_idioma")
