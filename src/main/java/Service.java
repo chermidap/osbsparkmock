@@ -153,7 +153,6 @@ public class Service {
                 ObjectMapper mapper = new ObjectMapper();
                 GetCustomerRequest getCustomerRequest = mapper.readValue(request.body(), GetCustomerRequest.class);
                 getCustomerResponse = AbonosTempMock.mockGetCustomer(getCustomerRequest);
-                getCustomerResponse =  new GetCustomerResponse();
             } catch (JsonParseException e){
                 // Hey, you did not send a valid request!
             }
