@@ -20,8 +20,8 @@ public class PurchaseTicketsRequest {
     private String p_loc_venta; // "p_loc_venta":"180000OZ0323",
     private String p_txt_transaccionventa; //“p_txt_transaccionventa”:”000097679111965324917”,
     private String p_txt_idcomercio; // "p_txt_idcomercio":"Saba Aparcamientos, S.A.",
-    private Date p_dat_fechahoraventa;// p_dat_fechahoraventa:type: "string" yyyy/MM/dd HH:mm:ss
-    private Double p_num_importeventaconiva;//  "p_num_importeventaconiva":"500.00",
+    private String p_dat_fechahoraventa;// p_dat_fechahoraventa:type: "string" yyyy/MM/dd HH:mm:ss
+    private String p_num_importeventaconiva;//  "p_num_importeventaconiva":"500.00",
     private String p_renuncia; //  "p_renuncia":"N", [N,S]
     private String p_cod_dir_cli; //  "p_cod_dir_cli,
     private String p_nombre_razon_social; //  "p_nombre_razon_social,
@@ -121,20 +121,20 @@ public class PurchaseTicketsRequest {
     }
 
     @JsonProperty(value = "p_dat_fechahoraventa")
-    public Date getP_dat_fechahoraventa() {
-        return p_dat_fechahoraventa!=null?(Date)p_dat_fechahoraventa.clone():null;
+    public String getP_dat_fechahoraventa() {
+        return p_dat_fechahoraventa;
     }
 
-    public void setP_dat_fechahoraventa(Date p_dat_fechahoraventa) {
-        this.p_dat_fechahoraventa = p_dat_fechahoraventa!=null?(Date)p_dat_fechahoraventa.clone():null;
+    public void setP_dat_fechahoraventa(String p_dat_fechahoraventa) {
+        this.p_dat_fechahoraventa = p_dat_fechahoraventa;
     }
 
     @JsonProperty(value = "p_num_importeventaconiva")
-    public Double getP_num_importeventaconiva() {
+    public String getP_num_importeventaconiva() {
         return p_num_importeventaconiva;
     }
 
-    public void setP_num_importeventaconiva(Double p_num_importeventaconiva) {
+    public void setP_num_importeventaconiva(String p_num_importeventaconiva) {
         this.p_num_importeventaconiva = p_num_importeventaconiva;
     }
 

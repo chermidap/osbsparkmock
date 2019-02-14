@@ -15,11 +15,11 @@ public class PurchasePrePayTicketRequest {
     private String p_loc_prod; //Localizador del producto (PK). Obligatorio.
     private String p_cod_producto; //Código SICAS del producto. Obligatorio.
     private String p_cod_aparca; //Código  del parking. Obligatorio.
-    private Date p_dat_fecha_inicio; //Fecha inicio del producto.
-    private double p_importeproductoconiva; // Importe del producto con IVA. Obligatorio.
-    private double p_importeproductosiniva; // Importe del producto sin IVA. Obligatorio.
-    private double p_importeiva; //Importe del IVA. Obligatorio.
-    private double p_porcentajeiva; //Porcentage de IVA aplicado. Obligatorio.
+    private String p_dat_fecha_inicio; //Fecha inicio del producto.
+    private String p_importeproductoconiva; // Importe del producto con IVA. Obligatorio.
+    private String p_importeproductosiniva; // Importe del producto sin IVA. Obligatorio.
+    private String p_importeiva; //Importe del IVA. Obligatorio.
+    private String p_porcentajeiva; //Porcentage de IVA aplicado. Obligatorio.
     private String p_prop_estadolocalizador = "Pdte. Canje"; //Propiedad ‘Estado Localizador’. Obligatorio.
     private String p_prop_mailcanje  = "Emitido"; //Propiedad ‘Dev. Pasarela Pago’. Obligatorio.
     private String p_prop_requierecanje = "Requiere"; //Propiedad ‘Requiere Canje’. Obligatorio.
@@ -57,48 +57,48 @@ public class PurchasePrePayTicketRequest {
     }
 
     @JsonProperty(value = "p_dat_fecha_inicio")
-    public Date getP_dat_fecha_inicio() {
-     return p_dat_fecha_inicio!=null?(Date)p_dat_fecha_inicio.clone():null;
+    public String getP_dat_fecha_inicio() {
+     return p_dat_fecha_inicio;
     }
 
-    public void setP_dat_fecha_inicio(Date p_dat_fecha_ini) {
-        p_dat_fecha_inicio = p_dat_fecha_ini!=null?(Date)p_dat_fecha_ini.clone():null;
+    public void setP_dat_fecha_inicio(String p_dat_fecha_ini) {
+        p_dat_fecha_inicio = p_dat_fecha_ini;
     }
 
     @JsonProperty(value = "p_importeproductoconiva")
 
-    public double getP_importeproductoconiva() {
+    public String getP_importeproductoconiva() {
         return p_importeproductoconiva;
     }
 
-    public void setP_importeproductoconiva(double p_importeproductoconiva) {
+    public void setP_importeproductoconiva(String p_importeproductoconiva) {
         this.p_importeproductoconiva = p_importeproductoconiva;
     }
 
     @JsonProperty(value = "p_importeproductosiniva")
-    public double getP_importeproductosiniva() {
+    public String getP_importeproductosiniva() {
         return p_importeproductosiniva;
     }
 
-    public void setP_importeproductosiniva(double p_importeproductosiniva) {
+    public void setP_importeproductosiniva(String p_importeproductosiniva) {
         this.p_importeproductosiniva = p_importeproductosiniva;
     }
 
     @JsonProperty(value = "p_importeiva")
-    public double getP_importeiva() {
+    public String getP_importeiva() {
         return p_importeiva;
     }
 
-    public void setP_importeiva(double p_importeiva) {
+    public void setP_importeiva(String p_importeiva) {
         this.p_importeiva = p_importeiva;
     }
 
     @JsonProperty(value = "p_porcentajeiva")
-    public double getP_porcentajeiva() {
+    public String getP_porcentajeiva() {
         return p_porcentajeiva;
     }
 
-    public void setP_porcentajeiva(double p_porcentajeiva) {
+    public void setP_porcentajeiva(String p_porcentajeiva) {
         this.p_porcentajeiva = p_porcentajeiva;
     }
 
