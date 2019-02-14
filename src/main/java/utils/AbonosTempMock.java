@@ -18,16 +18,16 @@ public class AbonosTempMock {
 
         userResponseVerified.setBirthDate("04/02/1980");
         userResponseVerified.setEmail("usuario.verified@intelygenz.com");
-        userResponseVerified.setId("4444");
+        userResponseVerified.setId("2444");
         userResponseVerified.setLanguage("CAST");
-        userResponseVerified.setName("Usuario");
+        userResponseVerified.setName("Usuario pruebas mock-osb");
         userResponseVerified.setNewsletter(true);
         userResponseVerified.setPassword("12345678");
-        userResponseVerified.setSurname("Verified");
+        userResponseVerified.setSurname("dfesewgf");
         userResponseVerified.setS_cod_cli("180444");
 
         userResponseNoVerified.setEmail("usuario.noverified@intelygenz.com");
-        userResponseNoVerified.setId("4445");
+        userResponseNoVerified.setId("2445");
         userResponseNoVerified.setLanguage("CAST");
         userResponseNoVerified.setName("Usuario");
         userResponseNoVerified.setNewsletter(true);
