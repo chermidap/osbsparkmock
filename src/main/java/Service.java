@@ -8,6 +8,8 @@ import utils.ParserToJson;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.swing.plaf.metal.MetalIconFactory.FileIcon16;
+
 import static spark.Spark.get;
 import static spark.Spark.port;
 import static spark.Spark.post;
@@ -109,7 +111,19 @@ public class Service {
         });
 
         post("/getConsultaImpagosCliente",(request, response) -> {
-            return "getConsultaImpagosCliente!";
+        	NonPaymentResponse nonPaymentResponse  =null;
+            try {
+                ObjectMapper mapper = new ObjectMapper();
+                // mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+                NonPaymentRequest nonPaymentRequest = mapper.readValue(request.body(), NonPaymentRequest.class);
+                nonPaymentResponse = AbonosTempMock.mockConsultaImpagosCliente(nonPaymentRequest);
+
+            } catch (JsonParseException e){
+                // Hey, you did not send a valid request!
+            }
+            response.status(200);
+            response.type("application/json");
+            return parser.dataToJson(nonPaymentResponse);
         });
 
         post("/SetDetailsUsuarioRS",(request, response) -> {
@@ -147,6 +161,25 @@ public class Service {
         });
 
 
+        post("/GetListUserIdCompraRS",(request, response) -> {
+
+            FindPurchasesByUserResponse findPurchasesByUserResponse  = null;
+            try {
+                ObjectMapper mapper = new ObjectMapper();
+                // mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+                FindPurchasesByUserRequest findPurchasesByUserRequest = mapper.readValue(request.body(), FindPurchasesByUserRequest.class);
+                findPurchasesByUserResponse = AbonosTempMock.mockGetListUserIdCompra(findPurchasesByUserRequest);
+
+            } catch (JsonParseException e){
+                // Hey, you did not send a valid request!
+            }
+            response.status(200);
+            response.type("application/json");
+            return parser.dataToJson(findPurchasesByUserResponse);
+
+        });
+        
+
         post("/GetDetailsClienteRS",(request, response) -> {
             GetCustomerResponse getCustomerResponse = null;
             try {
@@ -180,6 +213,7 @@ public class Service {
             return parser.dataToJson(addCustomerResponse);
 
         });
+
 
         get("/transformer", "application/json", (request, response) -> {
             return new Ticket("6860","097",100.0);
