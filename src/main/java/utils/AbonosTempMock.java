@@ -701,5 +701,141 @@ public class AbonosTempMock {
 
         return usuarios.get(request.getP_TXT_MAIL());
     }
+    
+	public static FindPurchasesByUserResponse mockGetListUserIdCompra(FindPurchasesByUserRequest request) {
+
+		FindPurchasesByUserResponse findPurchasesByUserResponse = new FindPurchasesByUserResponse();
+		if (request.getP_abono().equalsIgnoreCase("S")) {
+			List<ProdAbono> listaAbonos = new ArrayList<ProdAbono>();
+			ProdAbono prodAbono1 = new ProdAbono();
+			ProdAbono prodAbono2 = new ProdAbono();
+			ProdAbono prodAbono3 = new ProdAbono();
+
+			// Completamos abono 1
+			prodAbono1.setColor("GRIS");
+			prodAbono1.setMatricula("7537HGL");
+			prodAbono1.setMarca("RENAULT");
+			prodAbono1.setModelo("MEGANE");
+			prodAbono1.setIban("**** **** **** 2560");
+			prodAbono1.setFechaCompra("12/01/2018");
+			prodAbono1.setCuotaConDescuento("123.4");
+			prodAbono1.setDescuento("12");
+			prodAbono1.setEstado("Tramites pendientes");
+			prodAbono1.setParking("Parking Madrid");
+			prodAbono1.setFechaHoraVenta("2018/06/05 13:44:25");
+			prodAbono1.setFechaInicio("12/01/2018");
+			prodAbono1.setImporteVentaConIVA("193.21");
+			prodAbono1.setLocalizadorVenta("5626512");
+			prodAbono1.setTipoAbono("Abono mes");
+			prodAbono1.setViaT("4524-2222-2222-1212");
+
+			// Completamos abono 2
+			prodAbono2.setColor("ROJO");
+			prodAbono2.setMatricula("7537JGL");
+			prodAbono2.setMarca("OPEL");
+			prodAbono2.setModelo("CORSA");
+			prodAbono2.setIban("**** **** **** 3440");
+			prodAbono2.setFechaCompra("2018/06/05 13:44:25");
+			prodAbono2.setCuotaConDescuento("83.4");
+			prodAbono2.setDescuento("17");
+			prodAbono2.setEstado("Tramites pendientes");
+			prodAbono2.setParking("Parking Madrid");
+			prodAbono2.setFechaHoraVenta("2018/06/05 13:44:25");
+			prodAbono2.setFechaInicio("14/01/2018");
+			prodAbono2.setImporteVentaConIVA("83.21");
+			prodAbono2.setLocalizadorVenta("123456789012");
+			prodAbono2.setTipoAbono("Abono mes");
+			prodAbono2.setViaT("4524-3333-4455-4455");
+
+			// Completamos abono 3
+			prodAbono3.setColor("NEGRO");
+			prodAbono3.setMatricula("7537HHL");
+			prodAbono3.setMarca("PEUGEOT");
+			prodAbono3.setModelo("308");
+			prodAbono3.setIban("**** **** **** 1230");
+			prodAbono3.setFechaCompra("10/06/2018");
+			prodAbono3.setCuotaConDescuento("21.4");
+			prodAbono3.setDescuento("45");
+			prodAbono3.setEstado("Activo");
+			prodAbono3.setParking("Parking Madrid");
+			prodAbono3.setFechaHoraVenta("2018/06/05 13:44:25");
+			prodAbono3.setFechaInicio("10/06/2018");
+			prodAbono3.setImporteVentaConIVA("21.4");
+			prodAbono3.setLocalizadorVenta("902202122");
+			prodAbono3.setTipoAbono("Abono mes");
+			prodAbono3.setViaT("3233-4344-6565-7676");
+
+			//Si buscamos con tramites pendientes
+			if (request.getP_solo_tramite().equalsIgnoreCase("S")) {
+				listaAbonos.add(prodAbono1);
+				listaAbonos.add(prodAbono2);
+			} else {
+				listaAbonos.add(prodAbono1);
+				listaAbonos.add(prodAbono2);
+				listaAbonos.add(prodAbono3);
+			}
+
+			findPurchasesByUserResponse.setS_sabalist_prodsAbono(listaAbonos);
+			findPurchasesByUserResponse.setS_cod_error(null);
+		}else {
+			List<Purchase> listaProductos = new ArrayList<Purchase>();
+			Purchase purchase = new Purchase();
+	        purchase.setId("3232");
+	        purchase.setPurchaseDate("10/06/2018");
+	        purchase.setExpirationDate("10/08/2018");
+	        purchase.setProductLocalizator("201856454");
+	        purchase.setProductSICASCode("12122");
+	        purchase.setParkingCode("32323432");
+	        purchase.setUserCode("2443");
+	        purchase.setProductTotalPrice("122.32");
+	        purchase.setProductTotalPriceWithoutTaxes("122.32");
+	        purchase.setProductTaxesAmount("122.32");
+	        purchase.setProductTaxesRate("122.32");
+	        purchase.setProductDiscountPrice("122.32");
+	        purchase.setPurchaseTotalPrice("122.32");
+	        purchase.setInvoiceRequired("true");
+	        purchase.setCardToken("3232"); //Token de la tarjeta de crédito previamente creado con sipay
+	        purchase.setTransactionId("32232");
+	        listaProductos.add(purchase);
+	        findPurchasesByUserResponse.setS_sabalist_prodsVenta(listaProductos);
+		}
+		findPurchasesByUserResponse.setS_cod_error(null);
+		return findPurchasesByUserResponse;
+	}
+    
+    
+    
+    public static NonPaymentResponse mockConsultaImpagosCliente(NonPaymentRequest request){
+
+    	NonPaymentResponse response = new NonPaymentResponse();
+    	NonPayment nonPayment = new NonPayment();
+    	NonPayment nonPayment2 = new NonPayment();
+    	
+    	if(request.getP_cod_cli()==null && request.getP_txt_nif()==null && request.getP_email()==null) {
+    		response.setS_cod_error("1212");
+    		response.setS_impago(null);
+    		response.setS_importe_total(null);
+    		response.setS_lista_impagos(null);
+    	}else {
+    		nonPayment.setS_fecha_emision("2018/12/02");
+    		nonPayment.setS_num_factura("12121");
+    		nonPayment.setS_importe("1204.4");
+    		
+    		nonPayment2.setS_fecha_emision("2018/10/02");
+    		nonPayment2.setS_num_factura("12161");
+    		nonPayment2.setS_importe("30.0");
+    	
+    		
+    		response.setS_cod_error(null);
+    		response.setS_impago("true");
+    		response.setS_importe_total("1234.4");
+    		List<NonPayment> lista_impagos = new ArrayList<NonPayment>();
+    		lista_impagos.add(nonPayment);
+    		lista_impagos.add(nonPayment2);
+    		
+    		response.setS_lista_impagos(lista_impagos);
+    	}
+    	return response;
+    }
 
 }
