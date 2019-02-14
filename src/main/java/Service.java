@@ -180,6 +180,41 @@ public class Service {
         });
         
 
+        post("/GetDetailsClienteRS",(request, response) -> {
+            GetCustomerResponse getCustomerResponse = null;
+            try {
+                ObjectMapper mapper = new ObjectMapper();
+                GetCustomerRequest getCustomerRequest = mapper.readValue(request.body(), GetCustomerRequest.class);
+                getCustomerResponse = AbonosTempMock.mockGetCustomer(getCustomerRequest);
+            } catch (JsonParseException e){
+                // Hey, you did not send a valid request!
+            }
+
+            response.status(200);
+            response.type("application/json");
+            return parser.dataToJson(getCustomerResponse);
+
+        });
+
+        post("/CreateClienteRS",(request, response) -> {
+
+            AddCustomerResponse addCustomerResponse = null;
+            try {
+                ObjectMapper mapper = new ObjectMapper();
+                AddCustomerRequest addCustomerRequest = mapper.readValue(request.body(), AddCustomerRequest.class);
+                addCustomerResponse =   AbonosTempMock.mockAddCustomer(addCustomerRequest);
+
+            } catch (JsonParseException e){
+                // Hey, you did not send a valid request!
+            }
+
+            response.status(200);
+            response.type("application/json");
+            return parser.dataToJson(addCustomerResponse);
+
+        });
+
+
         get("/transformer", "application/json", (request, response) -> {
             return new Ticket("6860","097",100.0);
         }, new JsonTransformer());

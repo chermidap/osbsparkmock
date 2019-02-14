@@ -59,37 +59,41 @@ public class AbonosTempMock {
         List<Ticket> resultado = new ArrayList<Ticket>();
 
 
-            productPriceES2.setProductCode("2900");//cp026
-            productPriceES2.setParkingCode("097");
-            productPriceES2.setPriceWithDiscount(63.6);
-            productPriceES2.setPriceWithoutDiscount(200.6);
-            productPriceES2.setPriceWithDiscount_sin_iva(52.56);
-            //productPriceES2.set(11.04));
-            productPriceES2.setIva_percent(21.0);
-            productPriceES2.setDiscount(20.0);
+        productPriceES2.setProductCode("2900");//cp026
+        productPriceES2.setParkingCode("097");
+        productPriceES2.setPriceWithDiscount(152.67);
+        productPriceES2.setPriceWithoutDiscount(169.63);
+        productPriceES2.setPriceWithDiscount_sin_iva(126.17);
+        productPriceES2.setIva_percent(21.0);
+        productPriceES2.setDiscount(10.0);
+        productPriceES2.setAmount_iva_price_with_dto(26.5);
+        productPriceES2.setAmount_iva_price_withow_dto(29.44);
+        productPriceES2.setPriceWithowDiscount_sin_iva(140.19);
 
-            productPriceES2.setManageAmount( 170.0);
-            productPriceES2.setEnd_date( new Date());
-            productPriceES2.setRegistration_fee( 10.0);
-            productPriceES2.setTotal_amount(63.6+170+10);
-           // productPriceES2.setSub_total_amount(170+10));
+        productPriceES2.setManageAmount( 170.0);
+        productPriceES2.setEnd_date( "2019/12/31");
+        productPriceES2.setRegistration_fee( 10.0);
+        productPriceES2.setTotal_amount(63.6+170+10);
 
 
-            productPriceES.setProductCode("6748");//cp037
-            productPriceES.setParkingCode("097");
-            productPriceES.setPriceWithDiscount(50.6);
-            productPriceES.setPriceWithoutDiscount(200.6);
-            productPriceES.setPriceWithDiscount_sin_iva(52.56);
-            //productPriceES.setTaxesAmount(11.04));
-            productPriceES.setIva_percent(21.0);
-          //  productPriceES.setUnits(1);
-            productPriceES.setDiscount(20.0);
 
-            productPriceES.setManageAmount( 160.0);//gastos de emision de tarjeta
-            productPriceES.setEnd_date(new Date());
-            productPriceES.setRegistration_fee( 10.0);//cuota de alta
-            productPriceES.setTotal_amount(160+10+50.6);
-           // productPriceES.setSub_total_amount(170+10));
+
+        productPriceES.setProductCode("6748");//cp037
+        productPriceES.setParkingCode("097");
+        productPriceES.setPriceWithDiscount(229.0);
+        productPriceES.setPriceWithoutDiscount(254.45);
+        productPriceES.setPriceWithDiscount_sin_iva(189.26);
+        productPriceES.setAmount_iva_price_with_dto(39.74);
+        productPriceES.setAmount_iva_price_withow_dto(44.16);
+        productPriceES.setPriceWithowDiscount_sin_iva(210.29);
+        productPriceES.setIva_percent(21.0);
+        productPriceES.setDiscount(10.0);
+
+        productPriceES.setManageAmount( 160.0);//gastos de emision de tarjeta
+        productPriceES.setEnd_date("2019/12/31");
+        productPriceES.setRegistration_fee( 10.0);//cuota de alta
+        productPriceES.setTotal_amount(160+10+50.6);
+        // productPriceES.setSub_total_amount(170+10));
 
 
             productPriceES3.setProductCode("2903");//cp029
@@ -103,7 +107,7 @@ public class AbonosTempMock {
             productPriceES3.setDiscount(20.0);
 
             productPriceES3.setManageAmount( 180.0);
-            productPriceES3.setEnd_date( new Date());
+            productPriceES3.setEnd_date("2019/12/31");
             productPriceES3.setRegistration_fee( 20.0);
             productPriceES3.setTotal_amount(180+20+85.6);
            // productPriceES3.setSub_total_amount(180+20));
@@ -119,7 +123,7 @@ public class AbonosTempMock {
             productPriceES4.setDiscount(20.0);
 
             productPriceES4.setManageAmount( 180.0);
-            productPriceES4.setEnd_date( new Date());
+            productPriceES4.setEnd_date("2019/12/31");
             productPriceES4.setRegistration_fee( 20.0);
             productPriceES4.setTotal_amount(180+20+45.6);
            // productPriceES4.setSub_total_amount(170+10));
@@ -136,7 +140,7 @@ public class AbonosTempMock {
             productPriceES5.setDiscount(20.0);
 
             productPriceES5.setManageAmount( 180.0);
-            productPriceES5.setEnd_date( new Date());
+            productPriceES5.setEnd_date( "2019/12/31");
             productPriceES5.setRegistration_fee( 20.0);
             productPriceES5.setTotal_amount(180+20+34.6);
           //  productPriceES5.setSub_total_amount(170+10));
@@ -153,7 +157,7 @@ public class AbonosTempMock {
             productPriceES6.setDiscount(20.0);
 
             productPriceES6.setManageAmount( 180.0);
-            productPriceES6.setEnd_date( new Date());
+            productPriceES6.setEnd_date("2019/12/31");
             productPriceES6.setRegistration_fee( 20.0);
             productPriceES6.setTotal_amount(180+20+100.0);
           //  productPriceES6.setSub_total_amount(170+10));
@@ -171,7 +175,7 @@ public class AbonosTempMock {
             productPriceES7.setDiscount(20.0);
 
             productPriceES7.setManageAmount( 180.0);
-            productPriceES7.setEnd_date( new Date());
+            productPriceES7.setEnd_date("2019/12/31");
             productPriceES7.setRegistration_fee( 20.0);
             productPriceES7.setTotal_amount(180+20.0);
         //  productPriceES7.setSub_total_amount(170+10));
@@ -188,7 +192,7 @@ public class AbonosTempMock {
             productPriceES8.setDiscount(20.0);
 
             productPriceES8.setManageAmount( 180.0);
-            productPriceES8.setEnd_date( new Date());
+            productPriceES8.setEnd_date("2019/12/31");
             productPriceES8.setRegistration_fee( 20.0);
             productPriceES8.setTotal_amount(180+20.0);
           // productPriceES8.setSub_total_amount(170+10+90.6));
@@ -205,7 +209,7 @@ public class AbonosTempMock {
             productPriceES9.setDiscount(20.0);
 
             productPriceES9.setManageAmount( 180.0);
-            productPriceES9.setEnd_date( new Date());
+            productPriceES9.setEnd_date("2019/12/31");
             productPriceES9.setRegistration_fee( 20.0);
             productPriceES9.setTotal_amount(180+20+88.6);
           //  productPriceES9.setSub_total_amount(170+10));
@@ -334,23 +338,26 @@ public class AbonosTempMock {
 
             productPriceES.setProductCode("2900");//cp026
             productPriceES.setParkingCode("097");
-            productPriceES.setPriceWithDiscount(63.6);
-            productPriceES.setPriceWithoutDiscount(200.6);
-            productPriceES.setPriceWithDiscount_sin_iva(52.56);
-            productPriceES.setDiscount(20.0);
+            productPriceES.setPriceWithDiscount(152.67);
+            productPriceES.setPriceWithoutDiscount(169.63);
+            productPriceES.setPriceWithDiscount_sin_iva(126.17);
+            productPriceES.setDiscount(10.0);
             productPriceES.setIva_percent(21.0);
-           // productPriceES.setUnits(1);
+            productPriceES.setAmount_iva_price_with_dto(26.5);
+            productPriceES.setAmount_iva_price_withow_dto(29.44);
+            productPriceES.setPriceWithowDiscount_sin_iva(140.19);
 
 
             productPriceES2.setProductCode("6748");//cp037
             productPriceES2.setParkingCode("097");
-            productPriceES2.setPriceWithDiscount(50.6);
-            productPriceES2.setPriceWithoutDiscount(200.6);
-            productPriceES2.setPriceWithDiscount_sin_iva(52.56);
-           // productPriceES2.setTaxesAmount(11.04));
+            productPriceES2.setPriceWithDiscount(229.0);
+            productPriceES2.setPriceWithoutDiscount(254.45);
+            productPriceES2.setPriceWithDiscount_sin_iva(189.26);
+            productPriceES2.setAmount_iva_price_with_dto(39.74);
+            productPriceES2.setAmount_iva_price_withow_dto(44.16);
+            productPriceES2.setPriceWithowDiscount_sin_iva(210.29);
             productPriceES2.setIva_percent(21.0);
-            //productPriceES2.setUnits(1);
-            productPriceES2.setDiscount(20.0);
+            productPriceES2.setDiscount(10.0);
 
             productPriceES3.setProductCode("2903");//cp029
             productPriceES3.setParkingCode("097");
@@ -836,6 +843,41 @@ public class AbonosTempMock {
     		response.setS_lista_impagos(lista_impagos);
     	}
     	return response;
+    }
+
+    public static AddCustomerResponse mockAddCustomer(AddCustomerRequest request){
+
+        AddCustomerResponse addCustomerResponse = new AddCustomerResponse();
+
+        addCustomerResponse.setS_cod_cli("180444");
+        addCustomerResponse.setS_cod_error(null);
+
+        return addCustomerResponse;
+
+    }
+    public static GetCustomerResponse mockGetCustomer(GetCustomerRequest request){
+        CustomerS customerS = new CustomerS();
+        GetCustomerResponse getCustomerResponse = new GetCustomerResponse();
+
+        customerS.setS_apellido_1("Verificado");
+        customerS.setS_apellido_2("Verificado");
+        customerS.setS_cod_cli("180444");
+        customerS.setS_cod_postal("28080");
+        customerS.setS_direccion_fiscal("Gran Vía 30");
+        customerS.setS_nacionalidad("España");
+        customerS.setS_partita_iva(null);
+        customerS.setS_pec(null);
+        customerS.setS_poblacion("Madrid");
+        customerS.setS_telefono(910000000);
+        customerS.setS_nombre("Usuario");
+        customerS.setS_txt_nombreCompleto("Usuario Verificado Verificado");
+        customerS.setS_txt_nif("00000001T");
+        getCustomerResponse.setS_cod_error(null);
+        getCustomerResponse.setS_datos_cliente(customerS);
+
+
+        return getCustomerResponse;
+
     }
 
 }

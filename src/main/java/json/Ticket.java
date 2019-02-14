@@ -8,6 +8,7 @@ import java.util.Date;
 
 public class Ticket {
 
+
     private String productCode; // Código SICAS
     private String parkingCode;
     private Double discount; //  "s_descuento":"string",
@@ -22,26 +23,25 @@ public class Ticket {
     private Double manageAmount; // "s_gasto_gestion":"number",
     private Double iva_percent; // "s_porcentaje_iva":"number",
 
-    private Date end_date; //s_fecha_fin
+    private String end_date; //s_fecha_fin
     private Double total_amount; //s_total
     private Double registration_fee;//s_cuota_alta
 
-    @JsonProperty(value = "p_cod_producto")
+    @JsonProperty(value = "s_cod_producto")
     public String getProductCode() {
         return productCode;
     }
-    @JsonProperty(value = "s_cod_producto")
     public void setProductCode(String productCode) {
         this.productCode = productCode;
     }
-    @JsonProperty(value = "p_cod_aparca")
+    @JsonProperty(value = "s_cod_aparca")
     public String getParkingCode() {
         return parkingCode;
     }
-    @JsonProperty(value = "s_cod_aparca")
     public void setParkingCode(String parkingCode) {
         this.parkingCode = parkingCode;
     }
+
     @JsonProperty(value = "s_descuento")
     public Double getDiscount() {
         return discount;
@@ -118,11 +118,11 @@ public class Ticket {
     }
 
     @JsonProperty(value = "s_fecha_fin")
-    public Date getEnd_date() {
+    public String getEnd_date() {
         return end_date;
     }
 
-    public void setEnd_date(Date end_date) {
+    public void setEnd_date(String end_date) {
         this.end_date = end_date;
     }
 
