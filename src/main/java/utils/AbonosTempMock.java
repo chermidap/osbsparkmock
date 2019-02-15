@@ -762,7 +762,7 @@ public class AbonosTempMock {
 			prodAbono2.setFechaHoraVenta("2018/06/05 13:44:25");
 			prodAbono2.setFechaInicio("14/01/2018");
 			prodAbono2.setImporteVentaConIVA("83.21");
-			prodAbono2.setLocalizadorVenta("123456789012");
+			prodAbono2.setLocalizadorVenta("190000OM0028");
 			prodAbono2.setTipoAbono("Abono mes");
 			prodAbono2.setViaT("4524-3333-4455-4455");
 
@@ -895,5 +895,25 @@ public class AbonosTempMock {
         return getCustomerResponse;
 
     }
+    
+	public static VincultaAbnViaTResponse mockGetVincultaAbnViaT(VincultaAbnViaTRequest request) {
+
+		VincultaAbnViaTResponse vincultaAbnViaTResponse = new VincultaAbnViaTResponse();
+
+		if (request.getP_org_id() != null && request.getP_cod_idioma() != null && request.getP_cod_usu() != null
+				&& request.getP_cod_cli() != null && request.getP_cod_viat() != null
+				&& request.getP_loc_venta() != null) {
+			if (request.getP_cod_usu().equalsIgnoreCase("2444")) {
+				vincultaAbnViaTResponse.setS_cod_error(null);
+			} else {
+				vincultaAbnViaTResponse.setS_cod_error("2446");
+			}
+		} else {
+			vincultaAbnViaTResponse.setS_cod_error("SVD-002");
+		}
+
+		return vincultaAbnViaTResponse;
+	}
+    
 
 }
