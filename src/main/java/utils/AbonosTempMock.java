@@ -14,6 +14,7 @@ public class AbonosTempMock {
     private static Map<String, UserResponse> initMap() {
         Map<String, UserResponse> map = new HashMap<>();
         UserResponse userResponseVerified = new UserResponse();
+        UserResponse userResponseVerified2 = new UserResponse();
         UserResponse userResponseNoVerified = new UserResponse();
 
         userResponseVerified.setBirthDate("04/02/1980");
@@ -35,8 +36,19 @@ public class AbonosTempMock {
         userResponseNoVerified.setSurname("NoVerified");
         userResponseNoVerified.setBirthDate("04/02/1979");
         userResponseNoVerified.setS_cod_cli(null);
+        
+        userResponseVerified2.setBirthDate("18/07/1980");
+        userResponseVerified2.setEmail("usuario.verified.sin.imp@intelygenz.com");
+        userResponseVerified2.setId("2446");
+        userResponseVerified2.setLanguage("CAST");
+        userResponseVerified2.setName("Usuario verificado");
+        userResponseVerified2.setNewsletter(true);
+        userResponseVerified2.setPassword("12345678");
+        userResponseVerified2.setSurname("Sin impagos");
+        userResponseVerified2.setS_cod_cli("180444");
 
         map.put(userResponseVerified.getEmail(),userResponseVerified);
+        map.put(userResponseVerified2.getEmail(),userResponseVerified2);
         map.put(userResponseNoVerified.getEmail(),userResponseNoVerified);
 
         return Collections.unmodifiableMap(map);
@@ -824,23 +836,27 @@ public class AbonosTempMock {
     		response.setS_importe_total(null);
     		response.setS_lista_impagos(null);
     	}else {
-    		nonPayment.setS_fecha_emision("2018/12/02");
-    		nonPayment.setS_num_factura("12121");
-    		nonPayment.setS_importe("1204.4");
-    		
-    		nonPayment2.setS_fecha_emision("2018/10/02");
-    		nonPayment2.setS_num_factura("12161");
-    		nonPayment2.setS_importe("30.0");
-    	
-    		
-    		response.setS_cod_error(null);
-    		response.setS_impago("true");
-    		response.setS_importe_total("1234.4");
-    		List<NonPayment> lista_impagos = new ArrayList<NonPayment>();
-    		lista_impagos.add(nonPayment);
-    		lista_impagos.add(nonPayment2);
-    		
-    		response.setS_lista_impagos(lista_impagos);
+			if (request.getP_email().equalsIgnoreCase("usuario.verified@intelygenz.com")) {
+				nonPayment.setS_fecha_emision("2018/12/02");
+				nonPayment.setS_num_factura("12121");
+				nonPayment.setS_importe("1204.4");
+
+				nonPayment2.setS_fecha_emision("2018/10/02");
+				nonPayment2.setS_num_factura("12161");
+				nonPayment2.setS_importe("30.0");
+
+				response.setS_cod_error(null);
+				response.setS_impago("true");
+				response.setS_importe_total("1234.4");
+				List<NonPayment> lista_impagos = new ArrayList<NonPayment>();
+				lista_impagos.add(nonPayment);
+				lista_impagos.add(nonPayment2);
+
+				response.setS_lista_impagos(lista_impagos);
+			} else {
+				response.setS_impago("false");
+				response.setS_lista_impagos(null);
+			}
     	}
     	return response;
     }
