@@ -90,6 +90,7 @@ public class Service {
         });
         post("/datosCompletos",(request, response) -> {
 
+        	BaseResponse baseResponse = new BaseResponse();
             try {
                 ObjectMapper mapper = new ObjectMapper();
                 // mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
@@ -100,6 +101,8 @@ public class Service {
                 purchaseTicketsRequest.getP_marca();
                 purchaseTicketsRequest.getP_matricula();
                 purchaseTicketsRequest.getP_modelo();
+                
+                baseResponse.setS_COD_ERROR(null);
 
             } catch (JsonParseException e){
                 // Hey, you did not send a valid request!
@@ -107,7 +110,7 @@ public class Service {
             response.status(200);
             response.type("application/json");
 
-            return "ok";
+            return parser.dataToJson(baseResponse);
         });
 
         post("/getConsultaImpagosCliente",(request, response) -> {
@@ -214,6 +217,25 @@ public class Service {
 
         });
 
+		post("/getVincultaAbnViaT", (request, response) -> {
+
+			VincultaAbnViaTResponse vincultaAbnViaTResponse = null;
+			try {
+				ObjectMapper mapper = new ObjectMapper();
+				VincultaAbnViaTRequest vincultaAbnViaTRequest = mapper.readValue(request.body(),
+						VincultaAbnViaTRequest.class);
+				vincultaAbnViaTResponse = AbonosTempMock.mockGetVincultaAbnViaT(vincultaAbnViaTRequest);
+
+			} catch (JsonParseException e) {
+				// Hey, you did not send a valid request!
+			}
+
+			response.status(200);
+			response.type("application/json");
+			return parser.dataToJson(vincultaAbnViaTResponse);
+
+		});
+        
 
         get("/transformer", "application/json", (request, response) -> {
             return new Ticket("6860","097",100.0);
