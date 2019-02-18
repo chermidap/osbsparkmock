@@ -743,8 +743,7 @@ public class AbonosTempMock {
 			prodAbono1.setParking("Parking Madrid");
 			prodAbono1.setFechaHoraVenta("2018/06/05 13:44:25");
 			prodAbono1.setFechaInicio("12/01/2018");
-			prodAbono1.setImporteVentaConIVA("193.21");
-			prodAbono1.setLocalizadorVenta("5626512");
+			prodAbono1.setLocalizadorVenta("190000OM0083");
 			prodAbono1.setTipoAbono("Abono mes");
 			prodAbono1.setViaT("4524-2222-2222-1212");
 
@@ -761,8 +760,7 @@ public class AbonosTempMock {
 			prodAbono2.setParking("Parking Madrid");
 			prodAbono2.setFechaHoraVenta("2018/06/05 13:44:25");
 			prodAbono2.setFechaInicio("14/01/2018");
-			prodAbono2.setImporteVentaConIVA("83.21");
-			prodAbono2.setLocalizadorVenta("123456789012");
+			prodAbono2.setLocalizadorVenta("190000OM0028");
 			prodAbono2.setTipoAbono("Abono mes");
 			prodAbono2.setViaT("4524-3333-4455-4455");
 
@@ -779,7 +777,6 @@ public class AbonosTempMock {
 			prodAbono3.setParking("Parking Madrid");
 			prodAbono3.setFechaHoraVenta("2018/06/05 13:44:25");
 			prodAbono3.setFechaInicio("10/06/2018");
-			prodAbono3.setImporteVentaConIVA("21.4");
 			prodAbono3.setLocalizadorVenta("902202122");
 			prodAbono3.setTipoAbono("Abono mes");
 			prodAbono3.setViaT("3233-4344-6565-7676");
@@ -895,5 +892,21 @@ public class AbonosTempMock {
         return getCustomerResponse;
 
     }
+    
+	public static VincultaAbnViaTResponse mockGetVincultaAbnViaT(VincultaAbnViaTRequest request) {
+
+		VincultaAbnViaTResponse vincultaAbnViaTResponse = new VincultaAbnViaTResponse();
+
+		if (request.getP_org_id() != null && request.getP_cod_idioma() != null && request.getP_cod_usu() != null
+				&& request.getP_cod_cli() != null && request.getP_cod_viat() != null
+				&& request.getP_loc_venta() != null) {
+			vincultaAbnViaTResponse.setS_cod_error(null);
+		} else {
+			vincultaAbnViaTResponse.setS_cod_error("SVD-002");
+		}
+
+		return vincultaAbnViaTResponse;
+	}
+    
 
 }
