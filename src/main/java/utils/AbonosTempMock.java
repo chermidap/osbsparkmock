@@ -743,7 +743,7 @@ public class AbonosTempMock {
 			prodAbono1.setParking("Parking Madrid");
 			prodAbono1.setFechaHoraVenta("2018/06/05 13:44:25");
 			prodAbono1.setFechaInicio("12/01/2018");
-			prodAbono1.setLocalizadorVenta("5626512");
+			prodAbono1.setLocalizadorVenta("190000OM0083");
 			prodAbono1.setTipoAbono("Abono mes");
 			prodAbono1.setViaT("4524-2222-2222-1212");
 
@@ -900,11 +900,7 @@ public class AbonosTempMock {
 		if (request.getP_org_id() != null && request.getP_cod_idioma() != null && request.getP_cod_usu() != null
 				&& request.getP_cod_cli() != null && request.getP_cod_viat() != null
 				&& request.getP_loc_venta() != null) {
-			if (request.getP_cod_usu().equalsIgnoreCase("2444")) {
-				vincultaAbnViaTResponse.setS_cod_error(null);
-			} else {
-				vincultaAbnViaTResponse.setS_cod_error("2446");
-			}
+			vincultaAbnViaTResponse.setS_cod_error(null);
 		} else {
 			vincultaAbnViaTResponse.setS_cod_error("SVD-002");
 		}
