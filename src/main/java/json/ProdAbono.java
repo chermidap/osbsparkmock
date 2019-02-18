@@ -10,7 +10,6 @@ public class ProdAbono {
 
 	private String localizadorVenta;//S_TXT_LOCALIZADORVENTA;
     private String fechaHoraVenta;//S_DAT_FECHAHORAVENTA;
-    private String importeVentaConIVA;//S_NUM_IMPORTEVENTACONIVA;
 	private String fechaCompra; //S_FEC_COMPRA
 	private String fechaInicio; //S_FEC_INICIO
 	private String tipoAbono; //S_TIPO_ABONO
@@ -41,15 +40,6 @@ public class ProdAbono {
 
 	public void setFechaHoraVenta(String fechaHoraVenta) {
 		this.fechaHoraVenta = fechaHoraVenta;
-	}
-
-	@JsonProperty(value = "s_num_importeVentaConIVA")
-	public String getImporteVentaConIVA() {
-		return importeVentaConIVA;
-	}
-
-	public void setImporteVentaConIVA(String importeVentaConIVA) {
-		this.importeVentaConIVA = importeVentaConIVA;
 	}
 
 	@JsonProperty(value = "s_fec_compra")
@@ -174,7 +164,6 @@ public class ProdAbono {
     	return "OSBDataTicket: {localizadorVenta: " + localizadorVenta + 
     			" fechaHoraVenta: " + fechaHoraVenta +
     			" fechaCompra: " + fechaCompra +
-    			" importeVentaConIVA: " + importeVentaConIVA +
     			" fechaInicio: " + fechaInicio + 
     			" tipoAbono: " + tipoAbono + 
     			" parking: " + parking + 
