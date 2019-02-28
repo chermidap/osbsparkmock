@@ -79,7 +79,7 @@ public class TicketPricesReq {
         this.p_dat_hora_fin = p_dat_hora_fin;
     }
 
-    @JsonProperty(value = "p_dias_semana")
+    @JsonProperty(value = "p_dat_dias_de_semana")
     public String getP_dias_semana() {
         return p_dias_semana;
     }
