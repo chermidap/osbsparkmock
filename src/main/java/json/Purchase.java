@@ -44,6 +44,8 @@ public class Purchase implements Serializable {
     private String productLocalizator; //P_LOC_PROD
     private String parkingCode; //P_COD_APARCA
     private String productSICASCode; //P_COD_PROD
+    private String parkingDescription;//S_TXT_PARKING
+    private String productDescription; //S_TXT_PRODUCTO
 
     private String startString; //P_DAT_FECHAINI
     private String endString; //P_DAT_FECHAFIN
@@ -311,6 +313,23 @@ public class Purchase implements Serializable {
 
     public void setProductDiscountPrice(String productDiscountPrice) {
         this.productDiscountPrice = productDiscountPrice;
+    }
+
+    @JsonProperty(value = "S_TXT_PARKING")
+    public String getParkingDescription() {
+        return parkingDescription;
+    }
+
+    public void setParkingDescription(String parkingDescription) {
+        this.parkingDescription = parkingDescription;
+    }
+    @JsonProperty(value = "S_TXT_PRODUCTO")
+    public String getProductDescription() {
+        return productDescription;
+    }
+
+    public void setProductDescription(String productDescription) {
+        this.productDescription = productDescription;
     }
 
     public String getP_TXT_IDCOMERCIO() {

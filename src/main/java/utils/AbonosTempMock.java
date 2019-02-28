@@ -816,6 +816,9 @@ public class AbonosTempMock {
 	        purchase.setParkingCode("097");
             purchase.setEndString("21/12/2018");
             purchase.setStartString("06/12/2018");
+            purchase.setParkingDescription("Parking Saba Santa Caterina");
+            purchase.setProductDescription("Saba Multidía");
+
 
             Purchase purchase2 = new Purchase();
             purchase2.setId("3233");
@@ -836,6 +839,8 @@ public class AbonosTempMock {
             purchase2.setTransactionId("32232");
             purchase2.setEndString("18/12/2018");
             purchase2.setStartString("06/12/2018");
+            purchase2.setParkingDescription("Parking Saba Plaza Mostenses");
+            purchase2.setProductDescription("Saba Tempo 12h");
 
             Purchase purchase3 = new Purchase();
             purchase3.setId("3234");
@@ -856,6 +861,8 @@ public class AbonosTempMock {
             purchase3.setTransactionId("32232");
             purchase3.setEndString("21/12/2018");
             purchase3.setStartString("12/12/2018");
+            purchase3.setParkingDescription("Parking Saba Passeig de Gracia-Consell de Cent");
+            purchase3.setProductDescription("Saba Tempo 10h Gold");
 
             Purchase purchase4 = new Purchase();
             purchase4.setId("3235");
@@ -876,6 +883,8 @@ public class AbonosTempMock {
             purchase4.setTransactionId("32232");
             purchase4.setEndString("16  /12/2018");
             purchase4.setStartString("14/12/2018");
+            purchase4.setParkingDescription("Parking Saba Estación Tren Madrid - Atocha");
+            purchase4.setProductDescription("Saba Weekend");
 
 	        listaProductos.add(purchase);
             listaProductos.add(purchase2);
