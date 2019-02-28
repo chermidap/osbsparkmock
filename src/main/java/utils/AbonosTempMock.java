@@ -26,6 +26,7 @@ public class AbonosTempMock {
         userResponseVerified.setPassword("12345678");
         userResponseVerified.setSurname("dfesewgf");
         userResponseVerified.setS_cod_cli("180444");
+        userResponseVerified.setCommunications(true);
 
         userResponseNoVerified.setEmail("usuario.noverified@intelygenz.com");
         userResponseNoVerified.setId("2445");
@@ -36,6 +37,7 @@ public class AbonosTempMock {
         userResponseNoVerified.setSurname("NoVerified");
         userResponseNoVerified.setBirthDate("04/02/1979");
         userResponseNoVerified.setS_cod_cli(null);
+        userResponseNoVerified.setCommunications(false);
         
         userResponseVerified2.setBirthDate("18/07/1980");
         userResponseVerified2.setEmail("usuario.verified.sin.imp@intelygenz.com");
@@ -46,6 +48,7 @@ public class AbonosTempMock {
         userResponseVerified2.setPassword("12345678");
         userResponseVerified2.setSurname("Sin impagos");
         userResponseVerified2.setS_cod_cli("180444");
+        userResponseVerified2.setCommunications(false);
 
         map.put(userResponseVerified.getEmail(),userResponseVerified);
         map.put(userResponseVerified2.getEmail(),userResponseVerified2);
@@ -873,14 +876,14 @@ public class AbonosTempMock {
         GetCustomerResponse getCustomerResponse = new GetCustomerResponse();
 
         customerS.setS_apellido_1("Verificado");
-        customerS.setS_apellido_2("Verificado");
+        customerS.setS_apellido_2("Verificado2");
         customerS.setS_cod_cli("180444");
         customerS.setS_cod_postal("28080");
         customerS.setS_direccion_fiscal("Gran Vía 30");
-        customerS.setS_nacionalidad("España");
+        customerS.setS_nacionalidad("ES");
         customerS.setS_partita_iva(null);
         customerS.setS_pec(null);
-        customerS.setS_poblacion("Madrid");
+        customerS.setS_poblacion("MADRID");
         customerS.setS_telefono(910000000);
         customerS.setS_nombre("Usuario");
         customerS.setS_txt_nombreCompleto("Usuario Verificado Verificado");
@@ -908,5 +911,13 @@ public class AbonosTempMock {
 		return vincultaAbnViaTResponse;
 	}
     
+	public static UserChangeEmailResponse mockGetChangeEmail(UserChangeEmailRequest request) {
+
+		UserChangeEmailResponse userChangeEmailResponse = new UserChangeEmailResponse();
+
+		userChangeEmailResponse.setS_cod_error("SVG-009");
+		
+		return userChangeEmailResponse;
+	}
 
 }

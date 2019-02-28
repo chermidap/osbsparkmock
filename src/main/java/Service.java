@@ -235,6 +235,25 @@ public class Service {
 			return parser.dataToJson(vincultaAbnViaTResponse);
 
 		});
+		
+		post("/setDetailsEmailCliente", (request, response) -> {
+
+			UserChangeEmailResponse userChangeEmailResponse = null;
+			try {
+				ObjectMapper mapper = new ObjectMapper();
+				UserChangeEmailRequest userChangeEmailRequest = mapper.readValue(request.body(),
+						UserChangeEmailRequest.class);
+				userChangeEmailResponse = AbonosTempMock.mockGetChangeEmail(userChangeEmailRequest);
+
+			} catch (JsonParseException e) {
+				// Hey, you did not send a valid request!
+			}
+
+			response.status(200);
+			response.type("application/json");
+			return parser.dataToJson(userChangeEmailResponse);
+
+		});
         
 
         get("/transformer", "application/json", (request, response) -> {
