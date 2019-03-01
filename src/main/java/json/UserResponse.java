@@ -17,6 +17,7 @@ public class UserResponse implements Serializable {
     private String password; //TODO - Pasarlo a char[] por seguridad
     private String language = "CAST"; //Por defecto
     private String s_cod_cli;
+    private boolean communications;
 
     @JsonProperty(value = "S_COD_USU")
     public String getId() {
@@ -62,14 +63,22 @@ public class UserResponse implements Serializable {
         this.birthDate = birthDate;
     }
 
-
-
     @JsonProperty(value = "P_BOL_NEWSLETTER")
     public boolean isNewsletter() {
         return newsletter;
     }
 
     @JsonProperty(value = "S_BOL_NEWSLETTER")
+    public void setCommunications(boolean communications) {
+        this.communications = communications;
+    }
+
+    @JsonProperty(value = "S_BOL_COMUNICACIONES")
+    public boolean isCommunications() {
+        return communications;
+    }
+
+    @JsonProperty(value = "P_BOL_COMUNICACIONES")
     public void setNewsletter(boolean newsletter) {
         this.newsletter = newsletter;
     }
