@@ -12,6 +12,7 @@ public class AddCustomerRequest {
     private String p_tipo_alta;//Valores posibles: (O)tros o (A)bonado. Por defecto (O)tros
     private String p_txt_vinculaUsuario;//Vincular cliente. (S)í o (N)o. Por defecto (S)í
     private CustomerP p_datos_cliente;
+    private String p_cod_cli;
 
     @JsonProperty(value = "p_cod_idioma")
     public String getP_cod_idioma() {
@@ -66,8 +67,17 @@ public class AddCustomerRequest {
     public void setP_datos_cliente(CustomerP p_datos_cliente) {
         this.p_datos_cliente = p_datos_cliente;
     }
+    
+    @JsonProperty(value = "p_cod_cli")
+    public String getP_cod_cli() {
+		return p_cod_cli;
+	}
 
-    public String toJSON() {
+	public void setP_cod_cli(String p_cod_cli) {
+		this.p_cod_cli = p_cod_cli;
+	}
+
+	public String toJSON() {
         ObjectMapper mapper = new ObjectMapper();
         mapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);
         try {
@@ -87,6 +97,7 @@ public class AddCustomerRequest {
                 ", p_tipo_alta='" + p_tipo_alta + '\'' +
                 ", p_txt_vinculaUsuario='" + p_txt_vinculaUsuario + '\'' +
                 ", p_datos_cliente=" + p_datos_cliente +
+                ", p_cod_cli=" + p_cod_cli +
                 '}';
     }
 }
