@@ -797,14 +797,15 @@ public class AbonosTempMock {
 			findPurchasesByUserResponse.setS_sabalist_prodsAbono(listaAbonos);
 			findPurchasesByUserResponse.setS_cod_error(null);
 		}else {
+            //{"P_SABALIST_PRODUCTOS":[{"p_org_id":"81","p_cod_prod_venta":"2910","p_cod_aparca":"097","p_num_unidades":1}],"P_DAT_FECHAINICIO":"03122018","P_DAT_FECHAFIN":"06122018","P_COD_IDIOMA":"CAST","P_ORG_ID":"81"}
 			List<Purchase> listaProductos = new ArrayList<Purchase>();
 			Purchase purchase = new Purchase();
 	        purchase.setId("3232");
 	        purchase.setPurchaseDate("10/06/2018");
 	        purchase.setExpirationDate("10/08/2018");
 	        purchase.setProductLocalizator("201856454");
-	        purchase.setProductSICASCode("12122");
-	        purchase.setParkingCode("32323432");
+	        purchase.setProductSICASCode("2910");
+	        purchase.setParkingCode("097");
 	        purchase.setUserCode("2443");
 	        purchase.setProductTotalPrice("122.32");
 	        purchase.setProductTotalPriceWithoutTaxes("122.32");
@@ -815,7 +816,74 @@ public class AbonosTempMock {
 	        purchase.setInvoiceRequired("true");
 	        purchase.setCardToken("3232"); //Token de la tarjeta de crédito previamente creado con sipay
 	        purchase.setTransactionId("32232");
+	        purchase.setParkingCode("097");
+            purchase.setEndString("21/12/2018");
+            purchase.setStartString("06/12/2018");
+
+            Purchase purchase2 = new Purchase();
+            purchase2.setId("3233");
+            purchase2.setPurchaseDate("20/08/2018");
+            purchase2.setExpirationDate("10/08/2018");
+            purchase2.setProductLocalizator("201856454");
+            purchase2.setProductSICASCode("1436");
+            purchase2.setParkingCode("103");
+            purchase2.setUserCode("2443");
+            purchase2.setProductTotalPrice("70.32");
+            purchase2.setProductTotalPriceWithoutTaxes("122.32");
+            purchase2.setProductTaxesAmount("70.32");
+            purchase2.setProductTaxesRate("122.32");
+            purchase2.setProductDiscountPrice("122.32");
+            purchase2.setPurchaseTotalPrice("70.32");
+            purchase2.setInvoiceRequired("true");
+            purchase2.setCardToken("3232"); //Token de la tarjeta de crédito previamente creado con sipay
+            purchase2.setTransactionId("32232");
+            purchase2.setEndString("18/12/2018");
+            purchase2.setStartString("06/12/2018");
+
+            Purchase purchase3 = new Purchase();
+            purchase3.setId("3234");
+            purchase3.setPurchaseDate("21/09/2018");
+            purchase3.setExpirationDate("10/08/2018");
+            purchase3.setProductLocalizator("201856454");
+            purchase3.setProductSICASCode("4953");
+            purchase3.setParkingCode("331");
+            purchase3.setUserCode("2443");
+            purchase3.setProductTotalPrice("50.32");
+            purchase3.setProductTotalPriceWithoutTaxes("122.32");
+            purchase3.setProductTaxesAmount("122.32");
+            purchase3.setProductTaxesRate("122.32");
+            purchase3.setProductDiscountPrice("122.32");
+            purchase3.setPurchaseTotalPrice("50.32");
+            purchase3.setInvoiceRequired("true");
+            purchase3.setCardToken("3232"); //Token de la tarjeta de crédito previamente creado con sipay
+            purchase3.setTransactionId("32232");
+            purchase3.setEndString("21/12/2018");
+            purchase3.setStartString("12/12/2018");
+
+            Purchase purchase4 = new Purchase();
+            purchase4.setId("3235");
+            purchase4.setPurchaseDate("22/12/2018");
+            purchase4.setExpirationDate("10/08/2018");
+            purchase4.setProductLocalizator("201856454");
+            purchase4.setProductSICASCode("5713");
+            purchase4.setParkingCode("825");
+            purchase4.setUserCode("2443");
+            purchase4.setProductTotalPrice("110.5");
+            purchase4.setProductTotalPriceWithoutTaxes("122.32");
+            purchase4.setProductTaxesAmount("122.32");
+            purchase4.setProductTaxesRate("122.32");
+            purchase4.setProductDiscountPrice("122.32");
+            purchase4.setPurchaseTotalPrice("110.5");
+            purchase4.setInvoiceRequired("true");
+            purchase4.setCardToken("3232"); //Token de la tarjeta de crédito previamente creado con sipay
+            purchase4.setTransactionId("32232");
+            purchase4.setEndString("16  /12/2018");
+            purchase4.setStartString("14/12/2018");
+
 	        listaProductos.add(purchase);
+            listaProductos.add(purchase2);
+            listaProductos.add(purchase3);
+            listaProductos.add(purchase4);
 	        findPurchasesByUserResponse.setS_sabalist_prodsVenta(listaProductos);
 		}
 		findPurchasesByUserResponse.setS_cod_error(null);

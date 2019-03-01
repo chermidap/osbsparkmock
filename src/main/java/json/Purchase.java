@@ -6,6 +6,7 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 import java.io.Serializable;
+import java.util.Date;
 import java.util.Objects;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
@@ -250,7 +251,7 @@ public class Purchase implements Serializable {
     public void setProductSICASCode(String productSICASCode) {
         this.productSICASCode = productSICASCode;
     }
-
+    @JsonProperty(value = "S_DAT_FECHAINI")
     public String getStartString() {
         return startString;
     }
@@ -258,7 +259,7 @@ public class Purchase implements Serializable {
     public void setStartString(String startString) {
         this.startString = startString;
     }
-
+    @JsonProperty(value = "S_DAT_FECHAFIN")
     public String getEndString() {
         return endString;
     }

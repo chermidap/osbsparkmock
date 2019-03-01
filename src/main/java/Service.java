@@ -8,8 +8,6 @@ import utils.ParserToJson;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.swing.plaf.metal.MetalIconFactory.FileIcon16;
-
 import static spark.Spark.get;
 import static spark.Spark.port;
 import static spark.Spark.post;
@@ -254,7 +252,27 @@ public class Service {
 			return parser.dataToJson(userChangeEmailResponse);
 
 		});
-        
+
+
+        post("/GetImporteTotalCompras", (request, response) -> {
+
+            try {
+                ObjectMapper mapper = new ObjectMapper();
+                FindPurchasesByUserRequest purchasesByUserRequest    = mapper.readValue(request.body(),
+                        FindPurchasesByUserRequest.class);
+
+
+            } catch (JsonParseException e) {
+                // Hey, you did not send a valid request!
+            }
+            double total = 10.0;
+            PurchasesByUserSumResponse purcahsesByUserSumResponse = new PurchasesByUserSumResponse();
+            purcahsesByUserSumResponse.setS_NUM_IMPORTE(total);
+            response.status(200);
+            response.type("application/json");
+            return parser.dataToJson(purcahsesByUserSumResponse);
+
+        });
 
         get("/transformer", "application/json", (request, response) -> {
             return new Ticket("6860","097",100.0);
