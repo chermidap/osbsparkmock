@@ -983,7 +983,7 @@ public class AbonosTempMock {
 
 		UserChangeEmailResponse userChangeEmailResponse = new UserChangeEmailResponse();
 
-		userChangeEmailResponse.setS_cod_error("SVG-009");
+		userChangeEmailResponse.setS_cod_error(null);
 		
 		return userChangeEmailResponse;
 	}
