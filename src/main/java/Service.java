@@ -273,6 +273,45 @@ public class Service {
             return parser.dataToJson(purcahsesByUserSumResponse);
 
         });
+        
+        post("/getObtenerFacturasCliente", (request, response) -> {
+
+        	GetObtenerFacturasClienteResponse getObtenerFacturasClienteResponse = null;
+			try {
+				ObjectMapper mapper = new ObjectMapper();
+				GetObtenerFacturasClienteRequest getObtenerFacturasClienteRequest = mapper.readValue(request.body(),
+						GetObtenerFacturasClienteRequest.class);
+				getObtenerFacturasClienteResponse = AbonosTempMock.mockGetObtenerFacturasCliente(getObtenerFacturasClienteRequest);
+
+			} catch (JsonParseException e) {
+				// Hey, you did not send a valid request!
+			}
+
+			response.status(200);
+			response.type("application/json");
+			return parser.dataToJson(getObtenerFacturasClienteResponse);
+
+        });
+        
+        post("/getPdfFacturaCliente", (request, response) -> {
+
+        	GetPdfFacturaClienteResponse getPdfFacturaClienteResponse = null;
+        	
+			try {
+				ObjectMapper mapper = new ObjectMapper();
+				GetPdfFacturaClienteRequest getPdfFacturaClienteRequest = mapper.readValue(request.body(),
+						GetPdfFacturaClienteRequest.class);
+				getPdfFacturaClienteResponse = AbonosTempMock.mockGetPdfFacturaCliente(getPdfFacturaClienteRequest);
+
+			} catch (JsonParseException e) {
+				// Hey, you did not send a valid request!
+			}
+
+			response.status(200);
+			response.type("application/json");
+			return parser.dataToJson(getPdfFacturaClienteResponse);
+
+        });
 
         get("/transformer", "application/json", (request, response) -> {
             return new Ticket("6860","097",100.0);

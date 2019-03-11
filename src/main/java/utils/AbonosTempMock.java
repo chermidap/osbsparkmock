@@ -2,7 +2,13 @@ package utils;
 
 import json.*;
 
-
+import java.io.IOException;
+import java.io.StringWriter;
+import java.io.UnsupportedEncodingException;
+import java.io.Writer;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -851,8 +857,8 @@ public class AbonosTempMock {
             purchase3.setProductTotalPrice("50.32");
             purchase3.setProductTotalPriceWithoutTaxes("122.32");
             purchase3.setProductTaxesAmount("122.32");
-            purchase3.setProductTaxesRate("122.32");
-            purchase3.setProductDiscountPrice("122.32");
+            purchase3.setProductTaxesRate("121.32");
+            purchase3.setProductDiscountPrice("121.32");
             purchase3.setPurchaseTotalPrice("50.32");
             purchase3.setInvoiceRequired("true");
             purchase3.setCardToken("3232"); //Token de la tarjeta de crédito previamente creado con sipay
@@ -870,8 +876,8 @@ public class AbonosTempMock {
             purchase4.setUserCode("2443");
             purchase4.setProductTotalPrice("110.5");
             purchase4.setProductTotalPriceWithoutTaxes("122.32");
-            purchase4.setProductTaxesAmount("122.32");
-            purchase4.setProductTaxesRate("122.32");
+            purchase4.setProductTaxesAmount("120.32");
+            purchase4.setProductTaxesRate("120.32");
             purchase4.setProductDiscountPrice("122.32");
             purchase4.setPurchaseTotalPrice("110.5");
             purchase4.setInvoiceRequired("true");
@@ -987,5 +993,116 @@ public class AbonosTempMock {
 		
 		return userChangeEmailResponse;
 	}
+	
+	public static GetObtenerFacturasClienteResponse mockGetObtenerFacturasCliente(
+			GetObtenerFacturasClienteRequest request) {
 
+		GetObtenerFacturasClienteResponse getObtenerFacturasClienteResponse = new GetObtenerFacturasClienteResponse();
+
+		Bill bill1 = new Bill();
+		bill1.setS_num_factura("10000");
+		bill1.setS_fec_factura("10/02/2018");
+		bill1.setS_producto("Producto1");
+		bill1.setS_tipo_factura("Tipo de factura 1");
+		bill1.setS_parking("Parking toledo");
+		bill1.setS_importe("126.2");
+		bill1.setS_estado("Pagado");
+		bill1.setS_num_prefactura("5454");
+
+		Bill bill2 = new Bill();
+		bill2.setS_num_factura("10032");
+		bill2.setS_fec_factura("01/08/2015");
+		bill2.setS_producto("Abono1");
+		bill2.setS_tipo_factura("Tipo de factura 3");
+		bill2.setS_parking("Parking madrid");
+		bill2.setS_importe("546.2");
+		bill2.setS_estado("Pendiente");
+		bill2.setS_num_prefactura("43242");
+
+		Bill bill3 = new Bill();
+		bill3.setS_num_factura("98732");
+		bill3.setS_fec_factura("02/12/2017");
+		bill3.setS_producto("Abono3");
+		bill3.setS_tipo_factura("Tipo de factura 23");
+		bill3.setS_parking("Parking bilbao");
+		bill3.setS_importe("53.2");
+		bill3.setS_estado("Pendiente");
+		bill3.setS_num_prefactura("98768");
+		
+		Bill bill4 = new Bill();
+		bill4.setS_num_factura("9873455");
+		bill4.setS_fec_factura("02/10/2017");
+		bill4.setS_producto("Abono4");
+		bill4.setS_tipo_factura("Tipo de factura 4");
+		bill4.setS_parking("Parking bilbao");
+		bill4.setS_importe("553.2");
+		bill4.setS_estado("Pendiente");
+		bill4.setS_num_prefactura("9875468");
+		
+		Bill bill5 = new Bill();
+		bill5.setS_num_factura("95422");
+		bill5.setS_fec_factura("06/09/2017");
+		bill5.setS_producto("Abono5");
+		bill5.setS_tipo_factura("Tipo de factura 5");
+		bill5.setS_parking("Parking gerona");
+		bill5.setS_importe("23.2");
+		bill5.setS_estado("Pendiente");
+		bill5.setS_num_prefactura("2168");
+		
+		Bill bill6 = new Bill();
+		bill6.setS_num_factura("24343");
+		bill6.setS_fec_factura("12/05/2017");
+		bill6.setS_producto("Abono6");
+		bill6.setS_tipo_factura("Tipo de factura 6");
+		bill6.setS_parking("Parking leon");
+		bill6.setS_importe("32.2");
+		bill6.setS_estado("Pendiente");
+		bill6.setS_num_prefactura("7435");
+		
+		Bill bill7 = new Bill();
+		bill7.setS_num_factura("34334");
+		bill7.setS_fec_factura("02/09/2016");
+		bill7.setS_producto("Abono7");
+		bill7.setS_tipo_factura("Tipo de factura7");
+		bill7.setS_parking("Parking barcelona");
+		bill7.setS_importe("87.2");
+		bill7.setS_estado("Pendiente");
+		bill7.setS_num_prefactura("956568");
+
+		List<Bill> billList = new ArrayList<Bill>();
+		billList.add(bill1);
+		billList.add(bill2);
+		billList.add(bill3);
+		billList.add(bill4);
+		billList.add(bill5);
+		billList.add(bill6);
+		billList.add(bill7);
+
+		getObtenerFacturasClienteResponse.setS_cod_error(null);
+		getObtenerFacturasClienteResponse.setS_sabalist_facturas(billList);
+
+		return getObtenerFacturasClienteResponse;
+	}
+
+	public static GetPdfFacturaClienteResponse mockGetPdfFacturaCliente(
+			GetPdfFacturaClienteRequest request) {
+		
+		GetPdfFacturaClienteResponse getPdfFacturaClienteResponse = new GetPdfFacturaClienteResponse();
+		
+		byte[] data;
+		String example = "example";
+		data = example.getBytes();
+//		Path pdfPath = Paths.get("src/file.pdf");
+//		try {
+//			data = Files.readAllBytes(pdfPath);
+//		} catch (IOException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+		
+		String base64String = Base64.getEncoder().encodeToString(data);
+		getPdfFacturaClienteResponse.setS_pdf(base64String);
+		getPdfFacturaClienteResponse.setS_cod_error(null);
+		return getPdfFacturaClienteResponse;
+	}
 }
