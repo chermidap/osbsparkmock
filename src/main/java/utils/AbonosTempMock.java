@@ -1042,5 +1042,13 @@ public class AbonosTempMock {
 		
 		return userChangeEmailResponse;
 	}
+    public static SetDetailCustomerResponse mockGetChangePhone(SetDetailCustomerRequest request) {
+
+        SetDetailCustomerResponse detailCustomerResponse = new SetDetailCustomerResponse();
+
+        detailCustomerResponse.setS_cod_error(null);
+
+        return detailCustomerResponse;
+    }
 
 }
