@@ -181,7 +181,7 @@ public class Service {
         });
         
 
-        post("/GetDetailsClienteRS",(request, response) -> {
+        post("/GetDetailsClienteVerificadoRS",(request, response) -> {
             GetCustomerResponse getCustomerResponse = null;
             try {
                 ObjectMapper mapper = new ObjectMapper();
@@ -197,7 +197,7 @@ public class Service {
 
         });
 
-        post("/CreateClienteRS",(request, response) -> {
+        post("/SetRegistroClienteRS",(request, response) -> {
 
             AddCustomerResponse addCustomerResponse = null;
             try {
@@ -311,6 +311,22 @@ public class Service {
 			response.type("application/json");
 			return parser.dataToJson(getPdfFacturaClienteResponse);
 
+        });
+
+        post("/setDetailsCliente",(request, response) -> {
+            SetDetailCustomerResponse detailCustomerResponse  = null;
+            try {
+                ObjectMapper mapper = new ObjectMapper();
+
+                SetDetailCustomerRequest customerRequest = mapper.readValue(request.body(), SetDetailCustomerRequest.class);
+                detailCustomerResponse = AbonosTempMock.mockGetChangePhone(customerRequest);
+
+            } catch (JsonParseException e){
+                // Hey, you did not send a valid request!
+            }
+            response.status(200);
+            response.type("application/json");
+            return parser.dataToJson(detailCustomerResponse);
         });
 
         get("/transformer", "application/json", (request, response) -> {
