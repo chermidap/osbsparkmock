@@ -1164,8 +1164,7 @@ public class AbonosTempMock {
 //			e.printStackTrace();
 //		}
 		
-		String base64String = Base64.getEncoder().encodeToString(data);
-		getPdfFacturaClienteResponse.setS_pdf(base64String);
+		getPdfFacturaClienteResponse.setS_pdf(Base64.getEncoder().encode(data));
 		getPdfFacturaClienteResponse.setS_cod_error(null);
 		return getPdfFacturaClienteResponse;
 	}
