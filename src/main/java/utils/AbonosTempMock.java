@@ -744,6 +744,7 @@ public class AbonosTempMock {
 			prodAbono1.setDescuento("12");
 			prodAbono1.setEstado("Tramites pendientes");
 			prodAbono1.setParking("Parking Madrid");
+            prodAbono1.setCodAparca("097");
 			prodAbono1.setFechaHoraVenta("2018/06/05 13:44:25");
 			prodAbono1.setFechaInicio("12/01/2018");
 			prodAbono1.setLocalizadorVenta("190000OM0083");
@@ -760,7 +761,8 @@ public class AbonosTempMock {
 			prodAbono2.setCuotaConDescuento("83.4");
 			prodAbono2.setDescuento("17");
 			prodAbono2.setEstado("Tramites pendientes");
-			prodAbono2.setParking("Parking Madrid");
+			prodAbono2.setParking("Parking Saba Passeig de Gracia-Consell de Cent");
+            prodAbono2.setCodAparca("331");
 			prodAbono2.setFechaHoraVenta("2018/06/05 13:44:25");
 			prodAbono2.setFechaInicio("14/01/2018");
 			prodAbono2.setLocalizadorVenta("190000OM0028");
@@ -777,7 +779,8 @@ public class AbonosTempMock {
 			prodAbono3.setCuotaConDescuento("21.4");
 			prodAbono3.setDescuento("45");
 			prodAbono3.setEstado("Activo");
-			prodAbono3.setParking("Parking Madrid");
+			prodAbono3.setParking("Parque de estacionamento Saba Catedral");
+            prodAbono3.setCodAparca("029");
 			prodAbono3.setFechaHoraVenta("2018/06/05 13:44:25");
 			prodAbono3.setFechaInicio("10/06/2018");
 			prodAbono3.setLocalizadorVenta("902202122");
