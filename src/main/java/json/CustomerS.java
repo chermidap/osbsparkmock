@@ -22,6 +22,10 @@ public class CustomerS {
     private String s_cod_postal;
     private String s_poblacion;
     private long s_telefono;
+    private String street;
+    private String streetNumber;
+    private String streetType;
+    private String province;
 
     @JsonProperty(value = "s_cod_cli")
     public String getS_cod_cli() {
@@ -139,9 +143,44 @@ public class CustomerS {
     public void setS_telefono(long s_telefono) {
         this.s_telefono = s_telefono;
     }
+    
+    @JsonProperty(value = "s_domicilio")
+    public String getStreet() {
+		return street;
+	}
 
+	public void setStreet(String street) {
+		this.street = street;
+	}
 
-    public String toJSON() {
+	@JsonProperty(value = "s_num_domicilio")
+	public String getStreetNumber() {
+		return streetNumber;
+	}
+
+	public void setStreetNumber(String streetNumber) {
+		this.streetNumber = streetNumber;
+	}
+
+	@JsonProperty(value = "s_tipo_via")
+	public String getStreetType() {
+		return streetType;
+	}
+
+	public void setStreetType(String streetType) {
+		this.streetType = streetType;
+	}
+
+	@JsonProperty(value = "s_provincia")
+	public String getProvince() {
+		return province;
+	}
+
+	public void setProvince(String province) {
+		this.province = province;
+	}
+
+	public String toJSON() {
         ObjectMapper mapper = new ObjectMapper();
         mapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);
         try {

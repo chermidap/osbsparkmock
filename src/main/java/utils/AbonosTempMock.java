@@ -1017,6 +1017,12 @@ public class AbonosTempMock {
         customerS.setS_nombre("Usuario");
         customerS.setS_txt_nombreCompleto("Usuario Verificado Verificado");
         customerS.setS_txt_nif("00000001T");
+        customerS.setStreetType("AV");
+        customerS.setStreet("Ciudad Real");
+        customerS.setStreetNumber("13");
+        customerS.setProvince("TOLEDO");
+        
+        
         getCustomerResponse.setS_cod_error(null);
         getCustomerResponse.setS_datos_cliente(customerS);
 
