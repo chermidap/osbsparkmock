@@ -91,7 +91,7 @@ public class Purchase implements Serializable {
     private String motivorechazodev = ""; //Propiedad ‘Procede Rechazo Dev.’. Obligatorio.
     private String requieredevfisica = ""; //Propiedad ‘Requiere Dev. Física’. Obligatorio.
 
-
+    private String estadoLocalizador;
 
     public String getP_COD_IDIOMA() {
         return P_COD_IDIOMA;
@@ -109,7 +109,7 @@ public class Purchase implements Serializable {
         P_ORG_ID = p_ORG_ID;
     }
 
-    @JsonProperty(value = "S_TXT_LOCALIZADORVENTA")
+    @JsonProperty(value = "s_txt_localizadorVenta")
     public String getId() {
         return id;
     }
@@ -136,7 +136,7 @@ public class Purchase implements Serializable {
         this.customerId = customerId;
     }
 
-    @JsonProperty(value = "S_DAT_FECHAHORAVENTA")
+    @JsonProperty(value = "s_dat_fechaHoraVenta")
     public String getPurchaseDate() {
         return purchaseDate;
     }
@@ -169,7 +169,7 @@ public class Purchase implements Serializable {
         this.cardToken = cardToken;
     }
 
-    @JsonProperty(value = "S_DAT_FECHACADUCIDAD")
+    @JsonProperty(value = "s_dat_fechaCaducidad")
     public String getExpirationDate() {
         return expirationDate;
     }
@@ -178,7 +178,7 @@ public class Purchase implements Serializable {
         this.expirationDate = expirationDate;
     }
 
-    @JsonProperty(value = "S_NUM_IMPORTEVENTACONIVA")
+    @JsonProperty(value = "s_num_importeVentaConIVA")
     public String getPurchaseTotalPrice() {
         return purchaseTotalPrice;
     }
@@ -227,7 +227,7 @@ public class Purchase implements Serializable {
         this.viaTNumber = viaTNumber;
     }
 
-    @JsonProperty(value = "S_LOC_PROD")
+    @JsonProperty(value = "s_loc_prod")
     public String getProductLocalizator() {
         return productLocalizator;
     }
@@ -236,7 +236,7 @@ public class Purchase implements Serializable {
         this.productLocalizator = productLocalizator;
     }
 
-    @JsonProperty(value = "S_COD_APARCA")
+    @JsonProperty(value = "s_cod_aparca")
     public String getParkingCode() {
         return parkingCode;
     }
@@ -245,7 +245,7 @@ public class Purchase implements Serializable {
         this.parkingCode = parkingCode;
     }
 
-    @JsonProperty(value = "S_COD_PROD")
+    @JsonProperty(value = "s_cod_prod")
     public String getProductSICASCode() {
         return productSICASCode;
     }
@@ -253,7 +253,7 @@ public class Purchase implements Serializable {
     public void setProductSICASCode(String productSICASCode) {
         this.productSICASCode = productSICASCode;
     }
-    @JsonProperty(value = "S_DAT_FECHAINI")
+    @JsonProperty(value = "s_dat_fechaini")
     public String getStartString() {
         return startString;
     }
@@ -261,7 +261,7 @@ public class Purchase implements Serializable {
     public void setStartString(String startString) {
         this.startString = startString;
     }
-    @JsonProperty(value = "S_DAT_FECHAFIN")
+    @JsonProperty(value = "s_dat_fechafin")
     public String getEndString() {
         return endString;
     }
@@ -270,7 +270,7 @@ public class Purchase implements Serializable {
         this.endString = endString;
     }
 
-    @JsonProperty(value = "S_NUM_IMPORTEPRODUCTOCONIVA")
+    @JsonProperty(value = "s_num_importeProductoConIVA")
     public String getProductTotalPrice() {
         return productTotalPrice;
     }
@@ -279,7 +279,7 @@ public class Purchase implements Serializable {
         this.productTotalPrice = productTotalPrice;
     }
 
-    @JsonProperty(value = "S_NUM_IMPORTEPRODUCTOSINIVA")
+    @JsonProperty(value = "s_num_importeProductoSinIVA")
     public String getProductTotalPriceWithoutTaxes() {
         return productTotalPriceWithoutTaxes;
     }
@@ -288,7 +288,7 @@ public class Purchase implements Serializable {
         this.productTotalPriceWithoutTaxes = productTotalPriceWithoutTaxes;
     }
 
-    @JsonProperty(value = "S_NUM_IMPORTEIVA")
+    @JsonProperty(value = "s_num_importeIVA")
     public String getProductTaxesAmount() {
         return productTaxesAmount;
     }
@@ -297,7 +297,7 @@ public class Purchase implements Serializable {
         this.productTaxesAmount = productTaxesAmount;
     }
 
-    @JsonProperty(value = "S_NUM_PORCENTAJEIVA")
+    @JsonProperty(value = "s_num_porcentajeIVA")
     public String getProductTaxesRate() {
         return productTaxesRate;
     }
@@ -306,7 +306,7 @@ public class Purchase implements Serializable {
         this.productTaxesRate = productTaxesRate;
     }
 
-    @JsonProperty(value = "S_NUM_AHORRO")
+    @JsonProperty(value = "s_num_ahorro")
     public String getProductDiscountPrice() {
         return productDiscountPrice;
     }
@@ -315,7 +315,7 @@ public class Purchase implements Serializable {
         this.productDiscountPrice = productDiscountPrice;
     }
 
-    @JsonProperty(value = "S_TXT_PARKING")
+    @JsonProperty(value = "s_txt_parking")
     public String getParkingDescription() {
         return parkingDescription;
     }
@@ -323,7 +323,7 @@ public class Purchase implements Serializable {
     public void setParkingDescription(String parkingDescription) {
         this.parkingDescription = parkingDescription;
     }
-    @JsonProperty(value = "S_TXT_PRODUCTO")
+    @JsonProperty(value = "s_txt_producto")
     public String getProductDescription() {
         return productDescription;
     }
@@ -507,8 +507,17 @@ public class Purchase implements Serializable {
     public void setRequieredevfisica(String requieredevfisica) {
         this.requieredevfisica = requieredevfisica;
     }
+    
+    @JsonProperty(value = "s_prop_estadoLocalizador")
+    public String getEstadoLocalizador() {
+		return estadoLocalizador;
+	}
 
-    @Override
+	public void setEstadoLocalizador(String estadoLocalizador) {
+		this.estadoLocalizador = estadoLocalizador;
+	}
+
+	@Override
     public int hashCode() {
         return Objects.hash(id);
     }
