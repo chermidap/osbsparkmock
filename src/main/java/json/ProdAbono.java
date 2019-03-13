@@ -72,7 +72,7 @@ public class ProdAbono {
 		this.tipoAbono = tipoAbono;
 	}
 
-	@JsonProperty(value = "s_parking")
+	@JsonProperty(value = "s_txt_parking")
 	public String getParking() {
 		return parking;
 	}
@@ -180,7 +180,6 @@ public class ProdAbono {
 		this.codProd = codProd;
 	}
 
-	@Override
 
     @JsonProperty(value = "s_txt_producto")
     public String getProductDescription() {
