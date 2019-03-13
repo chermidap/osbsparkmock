@@ -756,6 +756,7 @@ public class AbonosTempMock {
 			prodAbono1.setLocalizadorVenta("190000OM0083");
 			prodAbono1.setTipoAbono("Abono mes");
 			prodAbono1.setViaT("4524-2222-2222-1212");
+			prodAbono1.setProductDescription("Descripcion abono 1");
 
 			// Completamos abono 2
 			prodAbono2.setColor("ROJO");
@@ -774,6 +775,7 @@ public class AbonosTempMock {
 			prodAbono2.setLocalizadorVenta("190000OM0028");
 			prodAbono2.setTipoAbono("Abono mes");
 			prodAbono2.setViaT("4524-3333-4455-4455");
+			prodAbono2.setProductDescription("Descripcion abono 2");
 
 			// Completamos abono 3
 			prodAbono3.setColor("NEGRO");
@@ -792,6 +794,7 @@ public class AbonosTempMock {
 			prodAbono3.setLocalizadorVenta("902202122");
 			prodAbono3.setTipoAbono("Abono mes");
 			prodAbono3.setViaT("3233-4344-6565-7676");
+			prodAbono3.setProductDescription("Descripcion abono 3");
 
 			//Si buscamos con tramites pendientes
 			if (request.getP_solo_tramite().equalsIgnoreCase("S")) {
@@ -1045,7 +1048,6 @@ public class AbonosTempMock {
 		} else {
 			vincultaAbnViaTResponse.setS_cod_error("SVD-002");
 		}
-
 		return vincultaAbnViaTResponse;
 	}
     

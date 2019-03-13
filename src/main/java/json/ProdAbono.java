@@ -23,6 +23,7 @@ public class ProdAbono {
     private String marca; //S_MARCA
     private String modelo; //S_MODELO
     private String color; //S_COLOR
+    private String productDescription; //s_txt_producto
 	private String codAparca; // S_COD_APARCA
 	private String codProd; // S_COD_PROD
 
@@ -180,6 +181,17 @@ public class ProdAbono {
 	}
 
 	@Override
+
+    @JsonProperty(value = "s_txt_producto")
+    public String getProductDescription() {
+		return productDescription;
+	}
+
+	public void setProductDescription(String productDescription) {
+		this.productDescription = productDescription;
+	}
+
+    @Override
     public String toString() {
     	return "OSBDataTicket: {localizadorVenta: " + localizadorVenta + 
     			" fechaHoraVenta: " + fechaHoraVenta +
@@ -196,6 +208,7 @@ public class ProdAbono {
     			" marca: " + marca + 
     			" modelo: " + modelo + 
     			" color: " + color + 
+    			" productDescription: " + productDescription +
     			"}";
     }
 }
