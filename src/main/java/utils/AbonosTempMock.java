@@ -733,7 +733,7 @@ public class AbonosTempMock {
 	public static FindPurchasesByUserResponse mockGetListUserIdCompra(FindPurchasesByUserRequest request) {
 
 		FindPurchasesByUserResponse findPurchasesByUserResponse = new FindPurchasesByUserResponse();
-		if (request.getP_abono().equalsIgnoreCase("S")) {
+		//if (request.getP_abono().equalsIgnoreCase("S")) {
 			List<ProdAbono> listaAbonos = new ArrayList<ProdAbono>();
 			ProdAbono prodAbono1 = new ProdAbono();
 			ProdAbono prodAbono2 = new ProdAbono();
@@ -829,7 +829,7 @@ public class AbonosTempMock {
 
 			findPurchasesByUserResponse.setS_sabalist_prodsAbono(listaAbonos);
 			findPurchasesByUserResponse.setS_cod_error(null);
-		}else {
+		/*}else {
             //{"P_SABALIST_PRODUCTOS":[{"p_org_id":"81","p_cod_prod_venta":"2910","p_cod_aparca":"097","p_num_unidades":1}],"P_DAT_FECHAINICIO":"03122018","P_DAT_FECHAFIN":"06122018","P_COD_IDIOMA":"CAST","P_ORG_ID":"81"}
 			List<Purchase> listaProductos = new ArrayList<Purchase>();
 			Purchase purchase = new Purchase();
@@ -972,8 +972,8 @@ public class AbonosTempMock {
             listaProductos.add(purchase4);
             listaProductos.add(purchase5);
             listaProductos.add(purchase6);
-	        findPurchasesByUserResponse.setS_sabalist_prodsVenta(listaProductos);
-		}
+	        //findPurchasesByUserResponse.setS_sabalist_prodsVenta(listaProductos);
+		}*/
 		findPurchasesByUserResponse.setS_cod_error(null);
 		return findPurchasesByUserResponse;
 	}
@@ -1166,13 +1166,13 @@ public class AbonosTempMock {
 		bill7.setS_num_prefactura("956568");
 
 		List<Bill> billList = new ArrayList<Bill>();
-		billList.add(bill1);
 		billList.add(bill2);
-		billList.add(bill3);
-		billList.add(bill4);
-		billList.add(bill5);
-		billList.add(bill6);
 		billList.add(bill7);
+		billList.add(bill6);
+		billList.add(bill5);
+		billList.add(bill4);
+		billList.add(bill3);
+		billList.add(bill1);
 
 		getObtenerFacturasClienteResponse.setS_cod_error(null);
 		getObtenerFacturasClienteResponse.setS_sabalist_facturas(billList);

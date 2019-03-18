@@ -15,10 +15,9 @@ public class FindPurchasesByUserRequest {
     private String p_num_pag_fin;
     private String p_txt_order_column;
     private String p_txt_order_type;
-    private String p_abono;
     private String p_solo_tramite;
 
-    @JsonProperty(value = "P_COD_IDIOMA")
+    @JsonProperty(value = "p_cod_idioma")
 	public String getP_cod_idioma() {
 		return p_cod_idioma;
 	}
@@ -27,7 +26,7 @@ public class FindPurchasesByUserRequest {
 		this.p_cod_idioma = p_cod_idioma;
 	}
 
-    @JsonProperty(value = "P_ORG_ID")
+    @JsonProperty(value = "p_org_id")
 	public String getP_org_id() {
 		return p_org_id;
 	}
@@ -36,7 +35,7 @@ public class FindPurchasesByUserRequest {
 		this.p_org_id = p_org_id;
 	}
 
-    @JsonProperty(value = "P_COD_USU")
+    @JsonProperty(value = "p_cod_usu")
 	public String getP_cod_usu() {
 		return p_cod_usu;
 	}
@@ -54,7 +53,7 @@ public class FindPurchasesByUserRequest {
 		this.p_cod_cli = p_cod_cli;
 	}
 
-	@JsonProperty(value = "P_NUM_PAG_INI")
+	@JsonProperty(value = "p_num_pag_ini")
 	public String getP_num_pag_ini() {
 		return p_num_pag_ini;
 	}
@@ -63,7 +62,7 @@ public class FindPurchasesByUserRequest {
 		this.p_num_pag_ini = p_num_pag_ini;
 	}
 
-	@JsonProperty(value = "P_NUM_PAG_FIN")
+	@JsonProperty(value = "p_num_pag_fin")
 	public String getP_num_pag_fin() {
 		return p_num_pag_fin;
 	}
@@ -72,7 +71,7 @@ public class FindPurchasesByUserRequest {
 		this.p_num_pag_fin = p_num_pag_fin;
 	}
 
-	@JsonProperty(value = "P_TXT_ORDER_COLUMN")
+	@JsonProperty(value = "p_txt_order_column")
 	public String getP_txt_order_column() {
 		return p_txt_order_column;
 	}
@@ -81,22 +80,13 @@ public class FindPurchasesByUserRequest {
 		this.p_txt_order_column = p_txt_order_column;
 	}
 
-	@JsonProperty(value = "P_TXT_ORDER_TYPE")
+	@JsonProperty(value = "p_txt_order_type")
 	public String getP_txt_order_type() {
 		return p_txt_order_type;
 	}
 
 	public void setP_txt_order_type(String p_txt_order_type) {
 		this.p_txt_order_type = p_txt_order_type;
-	}
-
-	@JsonProperty(value = "p_abono")
-	public String getP_abono() {
-		return p_abono;
-	}
-
-	public void setP_abono(String p_abono) {
-		this.p_abono = p_abono;
 	}
 
 	@JsonProperty(value = "p_solo_tramite")
@@ -130,7 +120,6 @@ public class FindPurchasesByUserRequest {
                 ", p_num_pag_fin='" + p_num_pag_fin + 
                 ", p_txt_order_column='" + p_txt_order_column + 
                 ", p_txt_order_type='" + p_txt_order_type + 
-                ", p_abono='" + p_abono + 
                 ", p_solo_tramite='" + p_solo_tramite + 
                 "} ";
     }
