@@ -180,6 +180,24 @@ public class Service {
 
         });
         
+        post("/getListUserIdCompraAbnRS",(request, response) -> {
+
+            FindPurchasesByUserResponse findPurchasesByUserResponse  = null;
+            try {
+                ObjectMapper mapper = new ObjectMapper();
+                // mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+                FindPurchasesByUserRequest findPurchasesByUserRequest = mapper.readValue(request.body(), FindPurchasesByUserRequest.class);
+                findPurchasesByUserResponse = AbonosTempMock.mockGetListUserIdCompra(findPurchasesByUserRequest);
+
+            } catch (JsonParseException e){
+                // Hey, you did not send a valid request!
+            }
+            response.status(200);
+            response.type("application/json");
+            return parser.dataToJson(findPurchasesByUserResponse);
+
+        });
+        
 
         post("/GetDetailsClienteVerificadoRS",(request, response) -> {
             GetCustomerResponse getCustomerResponse = null;
