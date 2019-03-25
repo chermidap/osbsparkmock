@@ -7,7 +7,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class GetPdfFacturaClienteResponse {
 
     private String s_cod_error;
-    private byte[] s_pdf;
+    private String s_pdf;
 
 	@JsonProperty(value = "s_cod_error")
 	public String getS_cod_error() {
@@ -19,11 +19,11 @@ public class GetPdfFacturaClienteResponse {
 	}
 
 	@JsonProperty(value = "s_pdf")
-	public byte[] getS_pdf() {
+	public String getS_pdf() {
 		return s_pdf;
 	}
 
-	public void setS_pdf(byte[] s_pdf) {
+	public void setS_pdf(String s_pdf) {
 		this.s_pdf = s_pdf;
 	}
 

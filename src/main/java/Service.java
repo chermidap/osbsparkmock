@@ -111,7 +111,7 @@ public class Service {
             return parser.dataToJson(baseResponse);
         });
 
-        post("/getConsultaImpagosCliente",(request, response) -> {
+        post("/getConsultaImpagosClienteRS",(request, response) -> {
         	NonPaymentResponse nonPaymentResponse  =null;
             try {
                 ObjectMapper mapper = new ObjectMapper();
@@ -233,7 +233,7 @@ public class Service {
 
         });
 
-		post("/getVincultaAbnViaT", (request, response) -> {
+		post("/getVinculaAbnViaTRS", (request, response) -> {
 
 			VincultaAbnViaTResponse vincultaAbnViaTResponse = null;
 			try {
@@ -252,7 +252,7 @@ public class Service {
 
 		});
 		
-		post("/setDetailsEmailCliente", (request, response) -> {
+		post("/setDetailsEmailClienteRS", (request, response) -> {
 
 			UserChangeEmailResponse userChangeEmailResponse = null;
 			try {
@@ -292,7 +292,7 @@ public class Service {
 
         });
         
-        post("/getObtenerFacturasCliente", (request, response) -> {
+        post("/getObtenerFacturasClienteRS", (request, response) -> {
 
         	GetObtenerFacturasClienteResponse getObtenerFacturasClienteResponse = null;
 			try {
@@ -311,7 +311,7 @@ public class Service {
 
         });
         
-        post("/getPdfFacturaCliente", (request, response) -> {
+        post("/GetPDFFacturaRS", (request, response) -> {
 
         	GetPdfFacturaClienteResponse getPdfFacturaClienteResponse = null;
         	
