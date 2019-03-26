@@ -1002,7 +1002,7 @@ public class AbonosTempMock {
 				nonPayment2.setS_importe("30.0");
 
 				response.setS_cod_error(null);
-				response.setS_impago("true");
+				response.setS_impago("S");
 				response.setS_importe_total("1234.4");
 				List<NonPayment> lista_impagos = new ArrayList<NonPayment>();
 				lista_impagos.add(nonPayment);
@@ -1010,7 +1010,7 @@ public class AbonosTempMock {
 
 				response.setS_lista_impagos(lista_impagos);
 			} else {
-				response.setS_impago("false");
+				response.setS_impago("N");
 				response.setS_lista_impagos(null);
 			}
     	}
