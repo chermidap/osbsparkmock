@@ -7,7 +7,7 @@ public class UserChangeEmailResponse {
 
     private String s_cod_error;
 
-    @JsonProperty(value = "S_COD_ERROR")
+    @JsonProperty(value = "s_cod_error")
     public String getS_cod_error() {
         return s_cod_error;
     }

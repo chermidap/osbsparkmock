@@ -11,10 +11,9 @@ public class UserChangeEmailRequest {
 	private String p_org_id;
 	private String p_cod_idioma;
 	private String p_cod_usu;
-	private String p_cod_cli;
 	private String p_email;
 
-	@JsonProperty(value = "P_ORG_ID")
+	@JsonProperty(value = "p_org_id")
 	public String getP_org_id() {
 		return p_org_id;
 	}
@@ -23,7 +22,7 @@ public class UserChangeEmailRequest {
 		this.p_org_id = p_org_id;
 	}
 
-	@JsonProperty(value = "P_COD_IDIOMA")
+	@JsonProperty(value = "p_cod_idioma")
 	public String getP_cod_idioma() {
 		return p_cod_idioma;
 	}
@@ -32,7 +31,7 @@ public class UserChangeEmailRequest {
 		this.p_cod_idioma = p_cod_idioma;
 	}
 
-	@JsonProperty(value = "P_COD_USU")
+	@JsonProperty(value = "p_cod_usu")
 	public String getP_cod_usu() {
 		return p_cod_usu;
 	}
@@ -41,16 +40,7 @@ public class UserChangeEmailRequest {
 		this.p_cod_usu = p_cod_usu;
 	}
 
-	@JsonProperty(value = "P_COD_CLI")
-	public String getP_cod_cli() {
-		return p_cod_cli;
-	}
-
-	public void setP_cod_cli(String p_cod_cli) {
-		this.p_cod_cli = p_cod_cli;
-	}
-
-	@JsonProperty(value = "P_EMAIL")
+	@JsonProperty(value = "p_email")
 	public String getP_email() {
 		return p_email;
 	}
