@@ -331,7 +331,7 @@ public class Service {
 
         });
 
-        post("/setDetailsCliente",(request, response) -> {
+        post("/setDetailsClienteRS",(request, response) -> {
             SetDetailCustomerResponse detailCustomerResponse  = null;
             try {
                 ObjectMapper mapper = new ObjectMapper();
