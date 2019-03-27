@@ -14,7 +14,7 @@ public class SetDetailCustomerRequest {
     private String p_domicilio;
     private String p_codigo_postal;
     private String p_num_domicilio;
-    private String p_municipio;
+    private String p_poblacion;
     private String p_provincia;
     private String p_telefono;
     private String p_solo_telefono;//(S,N) Servicio que permite modificar los datos de un usuario (sov-26)
@@ -83,15 +83,17 @@ public class SetDetailCustomerRequest {
     public void setP_num_domicilio(String p_num_domicilio) {
         this.p_num_domicilio = p_num_domicilio;
     }
-    @JsonProperty(value = "p_municipio")
-    public String getP_municipio() {
-        return p_municipio;
-    }
+    
+    @JsonProperty(value = "p_poblacion")
+    public String getP_poblacion() {
+		return p_poblacion;
+	}
 
-    public void setP_municipio(String p_municipio) {
-        this.p_municipio = p_municipio;
-    }
-    @JsonProperty(value = "p_provincia")
+	public void setP_poblacion(String p_poblacion) {
+		this.p_poblacion = p_poblacion;
+	}
+
+	@JsonProperty(value = "p_provincia")
     public String getP_provincia() {
         return p_provincia;
     }
@@ -138,7 +140,7 @@ public class SetDetailCustomerRequest {
                 ", p_domicilio='" + p_domicilio + '\'' +
                 ", p_codigo_postal='" + p_codigo_postal + '\'' +
                 ", p_num_domicilio='" + p_num_domicilio + '\'' +
-                ", p_municipio='" + p_municipio + '\'' +
+                ", p_poblacion='" + p_poblacion + '\'' +
                 ", p_provincia='" + p_provincia + '\'' +
                 ", p_telefono='" + p_telefono + '\'' +
                 ", p_solo_telefono='" + p_solo_telefono + '\'' +
