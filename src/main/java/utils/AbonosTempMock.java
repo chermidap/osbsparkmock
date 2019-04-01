@@ -756,7 +756,8 @@ public class AbonosTempMock {
 			prodAbono1.setLocalizadorVenta("190000OM0083");
 			prodAbono1.setTipoAbono("Abono mes");
 			prodAbono1.setViaT("4524-2222-2222-1212");
-			prodAbono1.setProductDescription("Descripcion abono 1");
+			prodAbono1.setProductDescription("D abono 1");
+			prodAbono1.setCodProd("1234");
 
 			// Completamos abono 2
 			prodAbono2.setColor("ROJO");
@@ -775,7 +776,8 @@ public class AbonosTempMock {
 			prodAbono2.setLocalizadorVenta("190000OM0028");
 			prodAbono2.setTipoAbono("Abono mes");
 			prodAbono2.setViaT("4524-3333-4455-4455");
-			prodAbono2.setProductDescription("Descripcion abono 2");
+			prodAbono2.setProductDescription("D abono 2");
+			prodAbono2.setCodProd("12345");
 
 			// Completamos abono 3
 			prodAbono3.setColor("NEGRO");
@@ -794,7 +796,8 @@ public class AbonosTempMock {
 			prodAbono3.setLocalizadorVenta("902202122");
 			prodAbono3.setTipoAbono("Abono mes");
 			prodAbono3.setViaT("3233-4344-6565-7676");
-			prodAbono3.setProductDescription("Descripcion abono 3");
+			prodAbono3.setProductDescription("D abono 3");
+			prodAbono3.setCodProd("1234567");
 
 
             // Completamos abono 3
@@ -814,7 +817,8 @@ public class AbonosTempMock {
             prodAbono4.setLocalizadorVenta("9022021444");
             prodAbono4.setTipoAbono("Saba Abono 24h Silver");
             prodAbono4.setViaT("3233-4344-6565-8888");
-            prodAbono4.setProductDescription("Descripcion abono 3");
+            prodAbono4.setProductDescription("D abono 3");
+            prodAbono4.setCodProd("1234567");
 
 			//Si buscamos con tramites pendientes
 			if (request.getP_solo_tramite().equalsIgnoreCase("S")) {
@@ -1076,7 +1080,7 @@ public class AbonosTempMock {
 
 		UserChangeEmailResponse userChangeEmailResponse = new UserChangeEmailResponse();
 
-		userChangeEmailResponse.setS_cod_error(null);
+		userChangeEmailResponse.setS_cod_error("");
 		
 		return userChangeEmailResponse;
 	}
@@ -1118,7 +1122,7 @@ public class AbonosTempMock {
 		Bill bill3 = new Bill();
 		bill3.setS_num_factura("98732");
 		bill3.setS_fec_factura("02/12/2017");
-		bill3.setS_producto("Abono3");
+		bill3.setS_producto("Abono1");
 		bill3.setS_tipo_factura("Tipo de factura 23");
 		bill3.setS_parking("Parking bilbao");
 		bill3.setS_importe("53.2");
@@ -1174,7 +1178,7 @@ public class AbonosTempMock {
 		billList.add(bill3);
 		billList.add(bill1);
 
-		getObtenerFacturasClienteResponse.setS_cod_error(null);
+		getObtenerFacturasClienteResponse.setS_cod_error("");
 		getObtenerFacturasClienteResponse.setS_sabalist_facturas(billList);
 
 		return getObtenerFacturasClienteResponse;
@@ -1336,7 +1340,7 @@ public class AbonosTempMock {
 		*/
 		String pdf_prueba = "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qWdQ1Jh2X/il3vabrGh9p3r3FVeqPPt1Hk7yJ9J6TPPXvwFyW21Q/9Zf3/1W0a3P4aFVZdY9ztgmn9yRSdjgWV+ICnQW0nDvfw/uUuVfCXco61JQyYNZW+7Q5uLv5tOX8KfCQGAEk78Hf6nyr4I/i/ZRYRiQPJgV+HPJJxnu/gdaLba0DQplbmRzdHJlYW0NCmVuZG9iag0KMSAwIG9iag0KPDwNCi9UeXBlIC9DYXRhbG9nDQovUGFnZXMgMyAwIFINCj4+DQplbmRvYmoNCjIgMCBvYmoNCjw8DQovVHlwZSAvSW5mbw0KL1Byb2R1Y2VyIChPcmFjbGUgWE1MIFB1Ymxpc2hlciA1LjYuMykNCj4+DQplbmRvYmoNCjMgMCBvYmoNCjw8DQovVHlwZSAvUGFnZXMNCi9LaWRzIFsNCjYgMCBSDQpdDQovQ291bnQgMQ0KPj4NCmVuZG9iag0KNCAwIG9iag0KPDwNCi9Qcm9jU2V0IFsgL1BERiAvVGV4dCBdDQovRm9udCA8PCANCi9GMCA4IDAgUg0KL0YxIDkgMCBSDQovRjIgMTAgMCBSDQo+Pg0KL1hPYmplY3QgPDwgDQovSW0wIDUgMCBSDQo+Pg0KPj4NCmVuZG9iag0KOCAwIG9iag0KPDwNCi9UeXBlIC9Gb250DQovU3VidHlwZSAvVHlwZTENCi9CYXNlRm9udCAvSGVsdmV0aWNhDQovRW5jb2RpbmcgL1dpbkFuc2lFbmNvZGluZw0KPj4NCmVuZG9iag0KOSAwIG9iag0KPDwNCi9UeXBlIC9Gb250DQovU3VidHlwZSAvVHlwZTENCi9CYXNlRm9udCAvSGVsdmV0aWNhLUJvbGQNCi9FbmNvZGluZyAvV2luQW5zaUVuY29kaW5nDQo+Pg0KZW5kb2JqDQoxMCAwIG9iag0KPDwNCi9UeXBlIC9Gb250DQovU3VidHlwZSAvVHlwZTENCi9CYXNlRm9udCAvSGVsdmV0aWNhLU9ibGlxdWUNCi9FbmNvZGluZyAvV2luQW5zaUVuY29kaW5nDQo+Pg0KZW5kb2JqDQoxMSAwIG9iag0KWyA2IDAgUiAvWFlaIDUxLjMgNTguMTY4IG51bGwgXQ0KZW5kb2JqDQoxMiAwIG9iag0KWyA2IDAgUiAvWFlaIDUxLjMgNTguMTY4IG51bGwgXQ0KZW5kb2JqDQp4cmVmDQowIDEzDQowMDAwMDAwMDAwIDY1NTM1IGYNCjAwMDAwMDI4NTMgMDAwMDAgbg0KMDAwMDAwMjkwOCAwMDAwMCBuDQowMDAwMDAyOTg2IDAwMDAwIG4NCjAwMDAwMDMwNTQgMDAwMDAgbg0KMDAwMDAwMDAxMCAwMDAwMCBuDQowMDAwMDAwNDU5IDAwMDAwIG4NCjAwMDAwMDA2MTcgMDAwMDAgbg0KMDAwMDAwMzE4MyAwMDAwMCBuDQowMDAwMDAzMjg4IDAwMDAwIG4NCjAwMDAwMDMzOTggMDAwMDAgbg0KMDAwMDAwMzUxMiAwMDAwMCBuDQowMDAwMDAzNTYzIDAwMDAwIG4NCnRyYWlsZXINCjw8DQovU2l6ZSAxMw0KL1Jvb3QgMSAwIFINCi9JbmZvIDIgMCBSDQovSUQgWzw2ZjAzZmQyM2RiMDM4NGJhZWE1Y2U2OGM0YjQ5MzNiND48NmYwM2ZkMjNkYjAzODRiYWVhNWNlNjhjNGI0OTMzYjQ+XQ0KPj4NCnN0YXJ0eHJlZg0KMzYxNA0KJSVFT0YNCg==";
 		getPdfFacturaClienteResponse.setS_pdf(pdf_prueba);
-		getPdfFacturaClienteResponse.setS_cod_error(null);
+		getPdfFacturaClienteResponse.setS_cod_error("");
 		return getPdfFacturaClienteResponse;
 	}
 }
